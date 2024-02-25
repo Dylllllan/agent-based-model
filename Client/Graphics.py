@@ -1,8 +1,5 @@
 import pygame as pg
 
-VERSION = "0.4"
-
-
 # Creating a surface for displaying the board
 def make_surface(tile_size: int, surface_size_x: int, surface_size_y: int) -> pg.Surface:
     surf = pg.Surface((surface_size_x * tile_size, surface_size_y * tile_size))
@@ -23,11 +20,11 @@ def display_items(screen, tile_size: int, surface_pos: tuple,
     items_to_display.extend([(('player', i), x, y) for i, (x, y) in enumerate(player_positions)])
     for item, x, y in items_to_display:
         if item == 'W':
-            image_path = 'assets/wall.png'
+            image_path = 'Assets/wall.png'
         elif item[0] == 'player':
-            image_path = f'assets/player{item[1] + 1}.png'
+            image_path = f'Assets/player{item[1] + 1}.png'
         else:
-            image_path = 'assets/milk.png'
+            image_path = 'Assets/milk.png'
         image = pg.image.load(image_path)
         square = pg.Rect(surface_pos[0] + y * tile_size + 1, surface_pos[1] + x * tile_size + 1,
                          tile_size, tile_size)

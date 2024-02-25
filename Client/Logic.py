@@ -1,10 +1,6 @@
 import pygame as pg
-import socket
-from pickle import dumps, loads
 
-from PrototypeClientGraphic import make_surface, display_items
-
-VERSION = "0.4"
+from Graphics import make_surface, display_items
 
 # AZERTY
 CONTROLS = {'left': (pg.K_LEFT, pg.K_a), 'up': (pg.K_UP, pg.K_z),
@@ -14,16 +10,8 @@ CONTROLS = {'left': (pg.K_LEFT, pg.K_a), 'up': (pg.K_UP, pg.K_z),
 #             'right': (pg.K_RIGHT, pg.K_d), 'down': (pg.K_DOWN, pg.K_s)}
 
 
-# Sending serialised data using pickle to the server
-def send_data(sock: socket.socket, data) -> None: sock.send(dumps(data))
-
-
-# Receiving data from server
-def receive_data(sock: socket.socket): return loads(sock.recv(1024))
-
-
 # Main function to handle a game
-def start_game(sock: socket.socket):
+def start_game():
     pg.init()
 
     # Initial message from server to set up the game
@@ -34,8 +22,8 @@ def start_game(sock: socket.socket):
     surface_pos = (10, 10)
 
     screen = pg.display.set_mode((surface_size_y * tile_size + 20, surface_size_x * tile_size + 20))
-    pg.display.set_caption(f"ABM Prototype - Player {player_number}")
-    pg.display.set_icon(pg.image.load('assets/logo.png'))
+    pg.display.set_caption(f"ABM - Player {player_number}")
+    pg.display.set_icon(pg.image.load('Assets/logo.png'))
     surf = make_surface(tile_size, surface_size_y, surface_size_x)
     clock = pg.time.Clock()
 

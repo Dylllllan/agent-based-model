@@ -1,0 +1,36 @@
+{
+  "size": {
+    "width": 15,
+    "height": 10
+  },
+  "shelves": [
+    {
+      "position": {
+        "x": 7,
+        "y": 5
+      },
+      "item": {
+        "name": "Bread",
+        "price": 200,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129340051_1_100x100_20240206.png"
+      }
+    }
+  ],
+  "checkouts": [
+    {
+      "position": {
+        "x": 14,
+        "y": 9
+      }
+    }
+  ],
+  "doors": [
+    {
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  ],
+  "walls": []
+}

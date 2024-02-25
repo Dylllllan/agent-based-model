@@ -1,0 +1,3 @@
+PodSixNet==0.11.0
+pygame==2.5.2
+reactivex==4.0.4
