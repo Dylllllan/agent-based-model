@@ -14,6 +14,17 @@
         "price": 200,
         "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129340051_1_100x100_20240206.png"
       }
+    },
+    {
+      "position": {
+        "x": 10,
+        "y": 3
+      },
+      "item": {
+        "name": "Pizza",
+        "price": 500,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129337969_1_100x100_20240202.png"
+      }
     }
   ],
   "checkouts": [

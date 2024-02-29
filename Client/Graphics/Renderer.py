@@ -46,7 +46,7 @@ class Renderer:
         for tile in self.store.map:
             image = None
             if tile.type == TileType.SHELF:
-                image = pg.image.load(f"{assets_path}bread.png")  # Registered picture for now
+                image = pg.image.load(f"{assets_path}{tile.name.lower()}.png")  # Registered file
             elif tile.type == TileType.CHECKOUT:
                 image = pg.image.load(f"{assets_path}checkout.png")
             elif tile.type == TileType.DOOR:

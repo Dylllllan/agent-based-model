@@ -3,11 +3,7 @@ from Agent.AgentTimeStep import AgentTimeStep
 from Agent.AgentType import AgentType
 from Agent.IAgent import IAgent
 from Agent.IAgentClient import IAgentClient
-from Heuristic.GoToCheckoutHeuristic import GoToCheckoutHeuristic
-from Heuristic.GoToDoorHeuristic import GoToDoorHeuristic
-from Heuristic.GoToItemHeuristic import GoToItemHeuristic
-from Heuristic.PayForItemsHeuristic import PayForItemsHeuristic
-from Heuristic.PickUpItemHeuristic import PickUpItemHeuristic
+from Heuristic.HeuristicFactory import HeuristicFactory
 from Store.Store import Store
 
 
@@ -19,7 +15,7 @@ class Agent(IAgent):
         self.client = agentClient
 
         self.store = store
-        self.heuristics = self.createHeuristics("", self.store)
+        self.heuristics = self.createHeuristics()
         self.currentHeuristicSetIndex = 0
 
         self.client.ConnectionObservable.subscribe(lambda _: self.client.sendInit(AgentType.SHOPPER))
@@ -40,22 +36,9 @@ class Agent(IAgent):
         # TO-DO: Can we move the heuristic set into its own class, rather than passing agent?
         self.currentTimeStep = AgentTimeStep(self.agentId, self.store, self.client, self)
 
-    @staticmethod
-    def createHeuristics(configFilePath: str, store: Store) -> list:
-        # TO-DO: Read the config file to create the heuristics
-        return [
-            [
-                GoToItemHeuristic({"itemName": "Bread"}, store),
-                PickUpItemHeuristic({"itemName": "Bread"}, store)
-            ],
-            [
-                GoToCheckoutHeuristic(store),
-                PayForItemsHeuristic(store)
-            ],
-            [
-                GoToDoorHeuristic(store)
-            ]
-        ]
+    def createHeuristics(self) -> list:
+        heuristicFactory = HeuristicFactory(self.configFilePath, self.store)
+        return heuristicFactory.createHeuristics()
 
     def evaluateHeuristics(self, state: AgentState) -> float:
         # print("Evaluating heuristics", self.currentHeuristicSetIndex)

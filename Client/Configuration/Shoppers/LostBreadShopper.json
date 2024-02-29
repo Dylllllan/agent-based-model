@@ -1,0 +1,52 @@
+{
+  "agentType": "SHOPPER",
+  "heuristics": [
+    [
+      {
+        "name": "GoToCheckoutHeuristic"
+      }
+    ],
+    [
+      {
+        "name": "GoToDoorHeuristic"
+      }
+    ],
+    [
+      {
+        "name": "GoToCheckoutHeuristic"
+      }
+    ],
+    [
+      {
+        "name": "GoToDoorHeuristic"
+      }
+    ],
+    [
+      {
+        "name": "GoToItemHeuristic",
+        "parameters": {
+          "itemName": "Bread"
+        }
+      },
+      {
+        "name": "PickUpItemHeuristic",
+        "parameters": {
+          "itemName": "Bread"
+        }
+      }
+    ],
+    [
+      {
+        "name": "GoToCheckoutHeuristic"
+      },
+      {
+        "name": "PayForItemsHeuristic"
+      }
+    ],
+    [
+      {
+        "name": "GoToDoorHeuristic"
+      }
+    ]
+  ]
+}
