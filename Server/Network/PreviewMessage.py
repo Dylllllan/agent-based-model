@@ -1,5 +1,5 @@
-from Server.Agent.AgentState import AgentState
-from Server.Core.ISerializable import ISerializable
+from Agent.AgentState import AgentState
+from Core.ISerializable import ISerializable
 
 
 class PreviewMessage(ISerializable):

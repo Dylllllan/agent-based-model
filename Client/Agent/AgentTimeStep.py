@@ -1,9 +1,9 @@
 from reactivex import from_iterable, zip
 
-from Client.Agent.AgentState import AgentState
-from Client.Agent.IAgent import IAgent
-from Client.Agent.IAgentClient import IAgentClient
-from Client.Store.Store import Store
+from Agent.AgentState import AgentState
+from Agent.IAgent import IAgent
+from Agent.IAgentClient import IAgentClient
+from Store.Store import Store
 
 
 class AgentTimeStep:

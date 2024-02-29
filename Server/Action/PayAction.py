@@ -1,5 +1,5 @@
-from Server.Action.Action import Action
-from Server.Agent.IAgent import IAgent
+from Action.Action import Action
+from Agent.IAgent import IAgent
 
 
 class PayAction(Action):

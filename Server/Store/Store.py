@@ -1,11 +1,11 @@
 import json
 
-from Server.Core.ISerializable import ISerializable
-from Server.Store.Checkout import Checkout
-from Server.Store.Door import Door
-from Server.Store.Shelf import Shelf
-from Server.Store.Tile import Tile
-from Server.Store.Wall import Wall
+from Core.ISerializable import ISerializable
+from Store.Checkout import Checkout
+from Store.Door import Door
+from Store.Shelf import Shelf
+from Store.Tile import Tile
+from Store.Wall import Wall
 
 
 class Store(ISerializable):

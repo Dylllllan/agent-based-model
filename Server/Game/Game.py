@@ -1,10 +1,10 @@
-from Server.Agent.Agent import Agent
-from Server.Agent.AgentType import AgentType
-from Server.Agent.IAgentChannel import IAgentChannel
-from Server.Game.GameTimeStep import GameTimeStep
-from Server.Network.StateMessage import StateMessage
-from Server.Store.ItemObserver import ItemObserver
-from Server.Store.Store import Store
+from Agent.Agent import Agent
+from Agent.AgentType import AgentType
+from Agent.IAgentChannel import IAgentChannel
+from Game.GameTimeStep import GameTimeStep
+from Network.StateMessage import StateMessage
+from Store.ItemObserver import ItemObserver
+from Store.Store import Store
 
 CONFIGURATION_PATH = "Configuration/store1.json"
 MIN_PLAYERS = 1

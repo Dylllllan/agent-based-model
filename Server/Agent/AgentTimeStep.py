@@ -3,9 +3,9 @@ from reactivex.abc import DisposableBase
 from reactivex.disposable import CompositeDisposable
 from reactivex.subject import BehaviorSubject
 
-from Server.Action.Action import Action
-from Server.Agent.Agent import Agent
-from Server.Network.PreviewMessage import PreviewMessage
+from Action.Action import Action
+from Agent.Agent import Agent
+from Network.PreviewMessage import PreviewMessage
 
 
 class AgentTimeStep(DisposableBase):

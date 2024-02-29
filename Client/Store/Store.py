@@ -1,10 +1,10 @@
 from reactivex import Observable
 from reactivex.subject import ReplaySubject
 
-from Client.Agent.AgentState import AgentState
-from Client.Agent.AgentType import AgentType
-from Client.Store.Tile import Tile, Shelf
-from Client.Store.TileType import TileType
+from Agent.AgentState import AgentState
+from Agent.AgentType import AgentType
+from Store.Tile import Tile, Shelf
+from Store.TileType import TileType
 
 
 class Store:

@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from Client.Agent.AgentState import AgentState
+from Agent.AgentState import AgentState
 
 
 class IAgent(ABC):

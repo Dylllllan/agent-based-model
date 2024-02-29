@@ -4,12 +4,12 @@ from reactivex import Observable, Subject
 from reactivex.abc import DisposableBase
 from reactivex.disposable import CompositeDisposable
 
-from Server.Agent.AgentState import AgentState
-from Server.Agent.AgentType import AgentType
-from Server.Agent.IAgent import IAgent
-from Server.Agent.IAgentChannel import IAgentChannel
-from Server.Store.Item import Item
-from Server.Store.ItemState import ItemState
+from Agent.AgentState import AgentState
+from Agent.AgentType import AgentType
+from Agent.IAgent import IAgent
+from Agent.IAgentChannel import IAgentChannel
+from Store.Item import Item
+from Store.ItemState import ItemState
 
 
 class Agent(IAgent, DisposableBase):

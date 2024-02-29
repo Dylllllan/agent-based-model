@@ -1,7 +1,7 @@
-from Server.Action.Action import Action
-from Server.Action.MoveAction import MoveAction
-from Server.Core.ISerializable import ISerializable
-from Server.Store.TileType import TileType
+from Action.Action import Action
+from Action.MoveAction import MoveAction
+from Core.ISerializable import ISerializable
+from Store.TileType import TileType
 
 
 class Tile(ISerializable):

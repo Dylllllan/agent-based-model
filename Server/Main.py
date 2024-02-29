@@ -1,4 +1,4 @@
-from Server.Game.GameServer import GameServer
+from Game.GameServer import GameServer
 
 HOST = "localhost"
 PORT = 8000

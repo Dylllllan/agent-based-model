@@ -1,5 +1,5 @@
-from Server.Core.ISerializable import ISerializable
-from Server.Store.Store import Store
+from Core.ISerializable import ISerializable
+from Store.Store import Store
 
 
 class InitMessage(ISerializable):

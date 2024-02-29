@@ -1,5 +1,5 @@
-from Client.Store.ItemState import ItemState
-from Server.Agent.AgentType import AgentType
+from Store.ItemState import ItemState
+from Agent.AgentType import AgentType
 
 
 class AgentState:

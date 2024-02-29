@@ -1,7 +1,7 @@
 from abc import abstractmethod, ABC
 
-from Client.Agent.AgentState import AgentState
-from Client.Store.Store import Store
+from Agent.AgentState import AgentState
+from Store.Store import Store
 
 
 class Heuristic(ABC):

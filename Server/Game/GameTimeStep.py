@@ -2,8 +2,8 @@ from reactivex import Subject, fork_join
 from reactivex.abc import DisposableBase
 from reactivex.disposable import CompositeDisposable
 
-from Server.Agent.AgentTimeStep import AgentTimeStep
-from Server.Store.Store import Store
+from Agent.AgentTimeStep import AgentTimeStep
+from Store.Store import Store
 
 
 class GameTimeStep(DisposableBase):

@@ -1,7 +1,7 @@
-from Server.Agent.AgentType import AgentType
-from Server.Agent.IAgent import IAgent
-from Server.Core.ISerializable import ISerializable
-from Server.Store.ItemState import ItemState
+from Agent.AgentType import AgentType
+from Agent.IAgent import IAgent
+from Core.ISerializable import ISerializable
+from Store.ItemState import ItemState
 
 
 class AgentState(IAgent, ISerializable):

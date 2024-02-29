@@ -1,6 +1,6 @@
-from Server.Action.LeaveAction import LeaveAction
-from Server.Store.Tile import Tile
-from Server.Store.TileType import TileType
+from Action.LeaveAction import LeaveAction
+from Store.Tile import Tile
+from Store.TileType import TileType
 
 
 class Door(Tile):

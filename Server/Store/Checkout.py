@@ -1,6 +1,6 @@
-from Server.Action.PayAction import PayAction
-from Server.Store.Tile import Tile
-from Server.Store.TileType import TileType
+from Action.PayAction import PayAction
+from Store.Tile import Tile
+from Store.TileType import TileType
 
 
 class Checkout(Tile):

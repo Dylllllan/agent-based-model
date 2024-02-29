@@ -1,14 +1,14 @@
-from Client.Agent.AgentState import AgentState
-from Client.Agent.AgentTimeStep import AgentTimeStep
-from Client.Agent.AgentType import AgentType
-from Client.Agent.IAgent import IAgent
-from Client.Agent.IAgentClient import IAgentClient
-from Client.Heuristic.GoToCheckoutHeuristic import GoToCheckoutHeuristic
-from Client.Heuristic.GoToDoorHeuristic import GoToDoorHeuristic
-from Client.Heuristic.GoToItemHeuristic import GoToItemHeuristic
-from Client.Heuristic.PayForItemsHeuristic import PayForItemsHeuristic
-from Client.Heuristic.PickUpItemHeuristic import PickUpItemHeuristic
-from Client.Store.Store import Store
+from Agent.AgentState import AgentState
+from Agent.AgentTimeStep import AgentTimeStep
+from Agent.AgentType import AgentType
+from Agent.IAgent import IAgent
+from Agent.IAgentClient import IAgentClient
+from Heuristic.GoToCheckoutHeuristic import GoToCheckoutHeuristic
+from Heuristic.GoToDoorHeuristic import GoToDoorHeuristic
+from Heuristic.GoToItemHeuristic import GoToItemHeuristic
+from Heuristic.PayForItemsHeuristic import PayForItemsHeuristic
+from Heuristic.PickUpItemHeuristic import PickUpItemHeuristic
+from Store.Store import Store
 
 
 class Agent(IAgent):

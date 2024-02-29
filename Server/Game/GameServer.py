@@ -2,10 +2,10 @@ from time import sleep
 
 from PodSixNet.Server import Server
 
-from Server.Agent.AgentChannel import AgentChannel
-from Server.Agent.AgentType import AgentType
-from Server.Agent.IAgentChannel import IAgentChannel
-from Server.Game.Game import Game
+from Agent.AgentChannel import AgentChannel
+from Agent.AgentType import AgentType
+from Agent.IAgentChannel import IAgentChannel
+from Game.Game import Game
 
 
 class GameServer(Server):

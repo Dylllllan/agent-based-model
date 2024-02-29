@@ -5,7 +5,7 @@ from reactivex.abc import DisposableBase
 from reactivex.disposable import CompositeDisposable
 from reactivex.subject import BehaviorSubject
 
-from Server.Store.ItemState import ItemState
+from Store.ItemState import ItemState
 
 
 class Item(DisposableBase):

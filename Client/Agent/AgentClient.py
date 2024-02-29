@@ -1,4 +1,5 @@
 import json
+from sys import exit as ex
 
 from PodSixNet.Connection import ConnectionListener, connection
 from reactivex import Subject, Observable
@@ -6,12 +7,12 @@ from reactivex.abc import DisposableBase
 from reactivex.disposable import CompositeDisposable
 from reactivex.subject import ReplaySubject
 
-from Client.Agent.AgentType import AgentType
-from Client.Agent.IAgentClient import IAgentClient
+from Agent.AgentType import AgentType
+from Agent.IAgentClient import IAgentClient
 
 
 class AgentClient(ConnectionListener, DisposableBase, IAgentClient):
-    def __init__(self, host, port, tickSubject: Subject):
+    def __init__(self, host, port, tickObservable: Observable):
         self.Connect((host, port))
         self.compositeDisposable = CompositeDisposable()
 
@@ -30,7 +31,7 @@ class AgentClient(ConnectionListener, DisposableBase, IAgentClient):
         self.previewSubject = Subject()
         self.compositeDisposable.add(self.previewSubject)
 
-        tickObserver = tickSubject.subscribe(on_next=lambda _: self.Pump())
+        tickObserver = tickObservable.subscribe(on_next=lambda _: self.Pump())
         self.compositeDisposable.add(tickObserver)
 
     # Observables
@@ -109,4 +110,4 @@ class AgentClient(ConnectionListener, DisposableBase, IAgentClient):
 
     def dispose(self):
         self.compositeDisposable.dispose()
-        exit()
+        ex()

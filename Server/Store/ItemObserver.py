@@ -1,6 +1,6 @@
 from reactivex import Observer
 
-from Server.Store.Store import Store
+from Store.Store import Store
 
 OUTPUT_DIRECTORY = "Output"
 

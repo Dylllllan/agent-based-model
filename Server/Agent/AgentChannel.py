@@ -4,12 +4,12 @@ from PodSixNet.Channel import Channel
 from reactivex import Subject, Observable
 from reactivex.disposable import CompositeDisposable
 
-from Server.Agent.IAgentChannel import IAgentChannel
-from Server.Core.ISerializable import ISerializable
-from Server.Network.InitMessage import InitMessage
-from Server.Network.PreviewMessage import PreviewMessage
-from Server.Network.StateMessage import StateMessage
-from Server.Store.Store import Store
+from Agent.IAgentChannel import IAgentChannel
+from Core.ISerializable import ISerializable
+from Network.InitMessage import InitMessage
+from Network.PreviewMessage import PreviewMessage
+from Network.StateMessage import StateMessage
+from Store.Store import Store
 
 
 class AgentChannel(Channel, IAgentChannel):

@@ -1,4 +1,4 @@
-from Client.Store.TileType import TileType
+from Store.TileType import TileType
 
 
 class Tile:

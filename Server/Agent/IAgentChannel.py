@@ -2,9 +2,9 @@ from abc import ABC, abstractmethod
 
 from reactivex import Observable
 
-from Server.Network.PreviewMessage import PreviewMessage
-from Server.Network.StateMessage import StateMessage
-from Server.Store.Store import Store
+from Network.PreviewMessage import PreviewMessage
+from Network.StateMessage import StateMessage
+from Store.Store import Store
 
 
 class IAgentChannel(ABC, object):

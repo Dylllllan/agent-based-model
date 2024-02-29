@@ -1,6 +1,6 @@
-from Server.Action.Action import Action
-from Server.Agent.IAgent import IAgent
-from Server.Store.ItemState import ItemState
+from Action.Action import Action
+from Agent.IAgent import IAgent
+from Store.ItemState import ItemState
 
 
 class PickupAction(Action):

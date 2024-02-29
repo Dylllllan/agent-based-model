@@ -1,5 +1,5 @@
-from Client.Agent.AgentState import AgentState
-from Client.Heuristic.Heuristic import Heuristic
+from Agent.AgentState import AgentState
+from Heuristic.Heuristic import Heuristic
 
 
 class PayForItemsHeuristic(Heuristic):

@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from Server.Store.ItemState import ItemState
+from Store.ItemState import ItemState
 
 
 class IAgent(ABC):

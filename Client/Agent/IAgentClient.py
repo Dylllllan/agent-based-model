@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 from reactivex import Observable
 
-from Client.Agent.AgentType import AgentType
+from Agent.AgentType import AgentType
 
 
 class IAgentClient(ABC, object):

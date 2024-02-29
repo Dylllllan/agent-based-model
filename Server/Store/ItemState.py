@@ -1,4 +1,4 @@
-from Server.Core.ISerializable import ISerializable
+from Core.ISerializable import ISerializable
 
 
 class ItemState(ISerializable):

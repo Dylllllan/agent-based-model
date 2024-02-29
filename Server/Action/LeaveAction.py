@@ -1,5 +1,5 @@
-from Server.Action.MoveAction import MoveAction
-from Server.Agent.IAgent import IAgent
+from Action.MoveAction import MoveAction
+from Agent.IAgent import IAgent
 
 
 class LeaveAction(MoveAction):

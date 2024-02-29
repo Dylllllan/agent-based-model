@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from Server.Agent.IAgent import IAgent
+from Agent.IAgent import IAgent
 
 
 class Action(ABC):

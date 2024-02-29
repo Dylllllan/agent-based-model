@@ -1,5 +1,5 @@
-from Server.Store.Tile import Tile
-from Server.Store.TileType import TileType
+from Store.Tile import Tile
+from Store.TileType import TileType
 
 
 class Wall(Tile):

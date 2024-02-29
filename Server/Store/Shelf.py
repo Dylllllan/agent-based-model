@@ -1,7 +1,7 @@
-from Server.Action.PickupAction import PickupAction
-from Server.Store.ItemState import ItemState
-from Server.Store.Tile import Tile
-from Server.Store.TileType import TileType
+from Action.PickupAction import PickupAction
+from Store.ItemState import ItemState
+from Store.Tile import Tile
+from Store.TileType import TileType
 
 
 class Shelf(Tile):

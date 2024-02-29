@@ -2,9 +2,9 @@ import pygame
 from reactivex import Subject
 
 from Agent.AgentClient import AgentClient
-from Client.Agent.Agent import Agent
-from Client.Agent.AgentType import AgentType
-from Client.Store.Store import Store
+from Agent.Agent import Agent
+from Graphics.Renderer import Renderer
+from Store.Store import Store
 
 HOST = "localhost"
 PORT = 8000
@@ -18,6 +18,7 @@ if __name__ == "__main__":
 
     store = Store(client.StoreObservable, client.StateObservable)
     agent = Agent("", store, client)
+    renderer = Renderer(tickSubject, store, client.ConnectionObservable)
 
     while True:
         tickSubject.on_next(None)

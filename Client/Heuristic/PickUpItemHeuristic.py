@@ -1,6 +1,6 @@
-from Client.Agent.AgentState import AgentState
-from Client.Heuristic.Heuristic import Heuristic
-from Client.Store.Store import Store
+from Agent.AgentState import AgentState
+from Heuristic.Heuristic import Heuristic
+from Store.Store import Store
 
 
 class PickUpItemHeuristic(Heuristic):
