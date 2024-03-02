@@ -1,17 +1,17 @@
 from Agent.AgentState import AgentState
-from Heuristic.Heuristic import Heuristic
+from Heuristic.HeuristicWithParameters import HeuristicWithParameters
 from Store.Store import Store
 
 
-class PickUpItemHeuristic(Heuristic):
-    def __init__(self, params: dict, store: Store):
+class PickUpItemHeuristic(HeuristicWithParameters):
+    def __init__(self, store: Store, params: dict):
         super().__init__(store)
 
-        self.itemName = params["itemName"]
+        self.category = params["category"]
 
     def evaluate(self, state: AgentState) -> float:
         # Check if the agent has the item or not
-        if state.hasItem(self.itemName):
+        if state.hasItemCategory(self.category):
             return 0.0
         else:
             return 1.0

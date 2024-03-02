@@ -13,13 +13,13 @@ from Store.ItemState import ItemState
 
 
 class Agent(IAgent, DisposableBase):
-    def __init__(self, channel: IAgentChannel, agentType: AgentType) -> None:
+    def __init__(self, channel: IAgentChannel, agentType: AgentType, position: tuple) -> None:
         self.id = str(uuid.uuid4())
         self.channel = channel
         self.compositeDisposable = CompositeDisposable()
 
         self.type = agentType
-        self.position = (0, 0)
+        self.position = position
         self.items = []
         self.paid = False
 
@@ -48,6 +48,10 @@ class Agent(IAgent, DisposableBase):
     @property
     def ItemObservable(self) -> Observable:
         return self.itemSubject
+
+    def leaveStore(self, onDoor: bool):
+        for item in self.items:
+            item.remove(onDoor)
 
     def dispose(self):
         self.compositeDisposable.dispose()

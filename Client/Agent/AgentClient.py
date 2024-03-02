@@ -1,5 +1,5 @@
 import json
-from sys import exit as ex
+from sys import exit
 
 from PodSixNet.Connection import ConnectionListener, connection
 from reactivex import Subject, Observable
@@ -110,4 +110,4 @@ class AgentClient(ConnectionListener, DisposableBase, IAgentClient):
 
     def dispose(self):
         self.compositeDisposable.dispose()
-        ex()
+        exit()

@@ -1,3 +1,5 @@
+import random
+
 from Agent.Agent import Agent
 from Agent.AgentType import AgentType
 from Agent.IAgentChannel import IAgentChannel
@@ -5,6 +7,7 @@ from Game.GameTimeStep import GameTimeStep
 from Network.StateMessage import StateMessage
 from Store.ItemObserver import ItemObserver
 from Store.Store import Store
+from Store.TileType import TileType
 
 CONFIGURATION_PATH = "Configuration/store1.json"
 MIN_PLAYERS = 1
@@ -23,20 +26,22 @@ class Game:
         self.running = False
 
     def addAgent(self, agentChannel: IAgentChannel, agentType: AgentType) -> Agent:
-        agent = Agent(agentChannel, agentType)
+        # Choose a random door from the store to spawn the agent on
+        door = random.choice(self.store.getDoors())
+
+        # Create the agent
+        agent = Agent(agentChannel, agentType, door.position)
         self.addedAgentQueue.append(agent)
 
         itemObserver = agent.ItemObservable.subscribe(
             lambda item: item.addPositionObserver(
-                ItemObserver(item.id, self.timeStep, self.store)
+                ItemObserver(item, self.timeStep, self.store)
             )
         )
         agent.compositeDisposable.add(itemObserver)
 
         # Send an initial message to the agent
         agent.channel.SendInit(agent.id, self.store)
-
-        # agent.addItem(ItemState("item1", 0))
 
         if len(self.addedAgentQueue) == MIN_PLAYERS and not self.running:
             # Start the game
@@ -62,7 +67,9 @@ class Game:
 
         # Remove agents
         for agent in self.removedAgentQueue:
-            agent.dispose()
+            agentOnDoor = self.store.getTile(agent.position).type == TileType.DOOR
+            agent.leaveStore(agentOnDoor)
+
             self.agents.remove(agent)
 
         self.removedAgentQueue.clear()

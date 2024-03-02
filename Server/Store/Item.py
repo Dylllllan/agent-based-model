@@ -14,6 +14,7 @@ class Item(DisposableBase):
         self.compositeDisposable = CompositeDisposable()
 
         self.name = itemState.name
+        self.category = itemState.category
         self.price = itemState.price
 
         self.position = position
@@ -28,7 +29,13 @@ class Item(DisposableBase):
         self.positionSubject.on_next(position)
 
     def toItemState(self) -> ItemState:
-        return ItemState(self.name, self.price)
+        return ItemState(self.name, self.category, self.price)
+
+    def remove(self, onDoor: bool):
+        if onDoor:
+            self.positionSubject.on_completed()
+        else:
+            self.positionSubject.on_error(Exception("Item removed at an invalid location"))
 
     def dispose(self):
         self.compositeDisposable.dispose()

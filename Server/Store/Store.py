@@ -6,6 +6,7 @@ from Store.Door import Door
 from Store.Shelf import Shelf
 from Store.Tile import Tile
 from Store.Wall import Wall
+from Store.Waypoint import Waypoint
 
 
 class Store(ISerializable):
@@ -30,6 +31,8 @@ class Store(ISerializable):
         self.replaceTiles(config["doors"], Door)
         # For each wall, replace the wall tiles
         self.replaceTiles(config["walls"], Wall)
+        # For each waypoint, replace the waypoint tiles
+        self.replaceTiles(config["waypoints"], Waypoint)
 
     def getTile(self, position: tuple) -> Tile:
         return self.map[(position[1] * self.width) + position[0]]
@@ -38,14 +41,16 @@ class Store(ISerializable):
         for shelf in shelves:
             x = int(shelf["position"]["x"])
             y = int(shelf["position"]["y"])
-            self.map[(y * self.width) + x] = Shelf(shelf["item"]["name"], int(shelf["item"]["price"]),
-                                                   (x, y), shelf["item"]["icon"])
+            self.map[(y * self.width) + x] = Shelf((x, y), shelf["metadata"])
 
-    def replaceTiles(self, tiles, tile_type):
+    def replaceTiles(self, tiles, tileType):
         for tile in tiles:
             x = int(tile["position"]["x"])
             y = int(tile["position"]["y"])
-            self.map[(y * self.width) + x] = tile_type((x, y))
+            self.map[(y * self.width) + x] = tileType((x, y))
+
+    def getDoors(self) -> list:
+        return [tile for tile in self.map if isinstance(tile, Door)]
 
     def toDict(self) -> dict:
         return {"size": {"width": self.width, "height": self.height}, "map": [tile.toDict() for tile in self.map]}

@@ -5,21 +5,23 @@ from Store.TileType import TileType
 
 
 class Shelf(Tile):
-    def __init__(self, name: str, price: int, position: tuple, icon: str):
+    def __init__(self, position: tuple, metadata: dict):
         super().__init__(position, TileType.SHELF)
 
-        self.name = name
-        self.price = price
-        self.icon = icon
+        self.name = metadata["name"]
+        self.price = int(metadata["price"])
+        self.category = metadata["category"]
+        self.icon = metadata["icon"]
 
         self.action = PickupAction(self.getItemState())
 
     def getItemState(self) -> ItemState:
-        return ItemState(self.name, self.price)
+        return ItemState(self.name, self.category, self.price)
 
     def toDict(self) -> dict:
         tile = super().toDict()
         tile["name"] = self.name
+        tile["category"] = self.category
         tile["price"] = self.price
         tile["icon"] = self.icon
 

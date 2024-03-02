@@ -1,3 +1,5 @@
+import json
+
 from Agent.AgentState import AgentState
 from Agent.AgentTimeStep import AgentTimeStep
 from Agent.AgentType import AgentType
@@ -9,16 +11,19 @@ from Store.Store import Store
 
 class Agent(IAgent):
     def __init__(self, configFilePath: str, store: Store, agentClient: IAgentClient):
-        self.configFilePath = configFilePath
-        # TO-DO: Read from config file
+        # Read the JSON configuration
+        file = open(configFilePath, "r")
+        config = json.load(file)
+        file.close()
 
         self.client = agentClient
 
         self.store = store
-        self.heuristics = self.createHeuristics()
-        self.currentHeuristicSetIndex = 0
+        self.heuristicIterator = iter(HeuristicFactory.createHeuristics(config["heuristics"], store))
+        self.currentHeuristicSet = next(self.heuristicIterator)
 
-        self.client.ConnectionObservable.subscribe(lambda _: self.client.sendInit(AgentType.SHOPPER))
+        # When the client is connected, send the agent type to the server
+        self.client.ConnectionObservable.subscribe(lambda _: self.client.sendInit(AgentType[config["agentType"]]))
 
         self.agentId = None
         self.client.AgentIdObservable.subscribe(lambda agentId: self.setAgentId(agentId))
@@ -32,21 +37,22 @@ class Agent(IAgent):
         self.agentId = agentId
 
     def nextTimeStep(self):
+        currentState = self.store.getAgent(self.agentId)
+        if self.evaluateHeuristics(currentState) == 0:
+            self.nextHeuristicSet()
+
         # Create a new time step
         # TO-DO: Can we move the heuristic set into its own class, rather than passing agent?
         self.currentTimeStep = AgentTimeStep(self.agentId, self.store, self.client, self)
 
-    def createHeuristics(self) -> list:
-        heuristicFactory = HeuristicFactory(self.configFilePath, self.store)
-        return heuristicFactory.createHeuristics()
-
     def evaluateHeuristics(self, state: AgentState) -> float:
         # print("Evaluating heuristics", self.currentHeuristicSetIndex)
         # print("There are", len(self.heuristics), "heuristic sets")
-        return sum([heuristic.evaluate(state) for heuristic in self.heuristics[self.currentHeuristicSetIndex]])
+        return sum([heuristic.evaluate(state) for heuristic in self.currentHeuristicSet])
 
     def nextHeuristicSet(self):
-        if self.currentHeuristicSetIndex < len(self.heuristics) - 1:
-            self.currentHeuristicSetIndex += 1
-        else:
+        try:
+            self.currentHeuristicSet = next(self.heuristicIterator)
+        except StopIteration:
+            print("No more heuristic sets")
             self.client.Close()

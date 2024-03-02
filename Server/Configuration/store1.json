@@ -1,47 +1,1924 @@
 {
   "size": {
-    "width": 15,
-    "height": 10
+    "width": 20,
+    "height": 17
   },
   "shelves": [
+    {
+      "position": {
+        "x": 0,
+        "y": 2
+      },
+      "metadata": {
+        "name": "Co-op Sparkling Lemonade 2 Litre",
+        "category": "Fizzy Drinks",
+        "price": 75,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128670210_1_100x100_20210513.png"
+      }
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 3
+      },
+      "metadata": {
+        "name": "Heartbrand  Ice Lolly Orange 105 ml",
+        "category": "Ice Lollies",
+        "price": 150,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/8000920401170_1_100x100_20230425.png"
+      }
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 8
+      },
+      "metadata": {
+        "name": "Co-op Pomegranate Seeds 220g",
+        "category": "Prepared Fruit",
+        "price": 285,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128596251_1_100x100_20240131.png"
+      }
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 9
+      },
+      "metadata": {
+        "name": "Co-op Egg & Cress with Mayonnaise on Malted Bread",
+        "category": "Sandwiches and Wraps",
+        "price": 175,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128590891_1_100x100_20220701.png"
+      }
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 10
+      },
+      "metadata": {
+        "name": "Co-op Tuna with Mayonnaise on White Bread",
+        "category": "Sandwiches and Wraps",
+        "price": 175,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128939737_1_100x100_20220701.png"
+      }
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 11
+      },
+      "metadata": {
+        "name": "Co-op American Menu Southern Style Fried Chicken with Coleslaw & BBQ Sauce on a Chilli Wrap",
+        "category": "Sandwiches and Wraps",
+        "price": 340,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128797436_1_100x100_20220701.png"
+      }
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 12
+      },
+      "metadata": {
+        "name": "Co-op Sushi Menu Fish Taster",
+        "category": "Sushi, Pasta and Salad",
+        "price": 210,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/0000050128334_1_100x100_20220701.png"
+      }
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 13
+      },
+      "metadata": {
+        "name": "Co-op Chicken & Bacon Caesar Pasta Salad 255g",
+        "category": "Sushi, Pasta and Salad",
+        "price": 315,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128726009_1_100x100_20240207.png"
+      }
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 14
+      },
+      "metadata": {
+        "name": "Co-op Sushi Menu Chicken & Duck Sushi with Soy Sauce",
+        "category": "Sushi",
+        "price": 345,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129301519_1_100x100_20220701.png"
+      }
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 15
+      },
+      "metadata": {
+        "name": "Kinder Bueno Milk Chocolate and Hazelnuts Single Bar 2 Finger x 21.5g (43g)",
+        "category": "Premium Meal Deal",
+        "price": 85,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/0000080052760_1_100x100_20240102.png"
+      }
+    },
+    {
+      "position": {
+        "x": 1,
+        "y": 16
+      },
+      "metadata": {
+        "name": "Co-op Ginger Shot Drink 100ml",
+        "category": "Drinks To Go",
+        "price": 145,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129297010_1_100x100_20230830.png"
+      }
+    },
+    {
+      "position": {
+        "x": 2,
+        "y": 0
+      },
+      "metadata": {
+        "name": "Co-op Valentine's Dozen Red Roses",
+        "category": "Flowers and Plants",
+        "price": 1000,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128779272_1_100x100_20230120.png"
+      }
+    },
+    {
+      "position": {
+        "x": 2,
+        "y": 16
+      },
+      "metadata": {
+        "name": "Co-op Ginger Shot Drink 100ml",
+        "category": "Drinks To Go",
+        "price": 145,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129297010_1_100x100_20230830.png"
+      }
+    },
+    {
+      "position": {
+        "x": 3,
+        "y": 3
+      },
+      "metadata": {
+        "name": "Co-op Bakery Mini Flapjack Bites",
+        "category": "Cookies and Mini Bites",
+        "price": 120,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129315967_1_100x100_20240207.png"
+      }
+    },
+    {
+      "position": {
+        "x": 3,
+        "y": 4
+      },
+      "metadata": {
+        "name": "Co-op Bakery 4 White Scotch Rolls",
+        "category": "From Our In Store Bakery",
+        "price": 170,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128867740_1_100x100_20240206.png"
+      }
+    },
+    {
+      "position": {
+        "x": 3,
+        "y": 5
+      },
+      "metadata": {
+        "name": "Co-op Bakery 4 Yum Yums",
+        "category": "From Our In Store Bakery",
+        "price": 160,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129321197_1_100x100_20240206.png"
+      }
+    },
+    {
+      "position": {
+        "x": 3,
+        "y": 6
+      },
+      "metadata": {
+        "name": "Co-op Bakery 4 Sugar Ring Doughnuts",
+        "category": "From Our In Store Bakery",
+        "price": 135,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129322040_1_100x100_20221116.png"
+      }
+    },
+    {
+      "position": {
+        "x": 3,
+        "y": 7
+      },
+      "metadata": {
+        "name": "Co-op Bakery 4 Sugar Ring Doughnuts",
+        "category": "From Our In Store Bakery",
+        "price": 135,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129322040_1_100x100_20221116.png"
+      }
+    },
+    {
+      "position": {
+        "x": 3,
+        "y": 8
+      },
+      "metadata": {
+        "name": "Warburtons Original Seeded Batch 400g",
+        "category": "Bread Loaves",
+        "price": 150,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5010044002446_1_100x100_20231212.png"
+      }
+    },
+    {
+      "position": {
+        "x": 3,
+        "y": 9
+      },
+      "metadata": {
+        "name": "Co-op Treat Brownie",
+        "category": "Snacks To Go",
+        "price": 125,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129340624_1_100x100_20231109.png"
+      }
+    },
+    {
+      "position": {
+        "x": 3,
+        "y": 10
+      },
+      "metadata": {
+        "name": "Yaar Nordic Yogurt Bar Vanilla 40g",
+        "category": "Snacks To Go",
+        "price": 110,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5060627050036_1_100x100_20230131.png"
+      }
+    },
+    {
+      "position": {
+        "x": 3,
+        "y": 11
+      },
+      "metadata": {
+        "name": "Reese's 2 Peanut Butter Cups 42g",
+        "category": "Snacks To Go",
+        "price": 105,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/0034000939572_1_100x100_20220813.png"
+      }
+    },
+    {
+      "position": {
+        "x": 3,
+        "y": 12
+      },
+      "metadata": {
+        "name": "Cadbury Twirl Orange Chocolate Bar 43g",
+        "category": "Snacks To Go",
+        "price": 80,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/7622201440176_1_100x100_20240117.png"
+      }
+    },
+    {
+      "position": {
+        "x": 3,
+        "y": 13
+      },
+      "metadata": {
+        "name": "FUEL10K Chocolate Porridge 10 x 36g (360g)",
+        "category": "Porridge and Oats",
+        "price": 280,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5060201625681_1_100x100_20240125.png"
+      }
+    },
+    {
+      "position": {
+        "x": 3,
+        "y": 16
+      },
+      "metadata": {
+        "name": "Oasis Zero Exotic Fruits 500ml",
+        "category": "Drinks To Go",
+        "price": 165,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5449000035295_1_100x100_20230928.png"
+      }
+    },
+    {
+      "position": {
+        "x": 4,
+        "y": 3
+      },
+      "metadata": {
+        "name": "Co-op Bakery Chocolate Ball Doughnuts 4 Pack",
+        "category": "Doughnuts and Muffins",
+        "price": 135,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129321722_1_100x100_20220922.png"
+      }
+    },
+    {
+      "position": {
+        "x": 4,
+        "y": 4
+      },
+      "metadata": {
+        "name": "Soreen 10 Malt Lunchbox Loaves Family Pack 300g",
+        "category": "Cakes, Cake Bars and Slices",
+        "price": 250,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5088722225968_1_100x100_20231005.png"
+      }
+    },
+    {
+      "position": {
+        "x": 4,
+        "y": 5
+      },
+      "metadata": {
+        "name": "Jacob's Original Cream Crackers 300g",
+        "category": "Crackers",
+        "price": 225,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000137121994_1_100x100_20231025.png"
+      }
+    },
+    {
+      "position": {
+        "x": 4,
+        "y": 6
+      },
+      "metadata": {
+        "name": "Co-op Italian Style Breadsticks 125g",
+        "category": "Biscuits",
+        "price": 115,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128954105_1_100x100_20210513.png"
+      }
+    },
+    {
+      "position": {
+        "x": 4,
+        "y": 7
+      },
+      "metadata": {
+        "name": "Co-op Irresistible 8 Crisp & Delicate Meringue Nests",
+        "category": "Desserts",
+        "price": 150,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128758956_1_100x100_20211214.png"
+      }
+    },
+    {
+      "position": {
+        "x": 4,
+        "y": 8
+      },
+      "metadata": {
+        "name": "Co-op Fairtrade Italian Style Ground Coffee 200g",
+        "category": "Ground and Coffee Beans",
+        "price": 300,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129334555_1_100x100_20230325.png"
+      }
+    },
+    {
+      "position": {
+        "x": 4,
+        "y": 9
+      },
+      "metadata": {
+        "name": "Taylors of Harrogate Yorkshire Tea 40 Tea Bags 125g",
+        "category": "Tea",
+        "price": 175,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5010357112009_1_100x100_20231209.png"
+      }
+    },
+    {
+      "position": {
+        "x": 4,
+        "y": 10
+      },
+      "metadata": {
+        "name": "Co-op Multi-Colour Strands 65g",
+        "category": "Home Baking and Sugar",
+        "price": 140,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128716512_1_100x100_20220209.png"
+      }
+    },
+    {
+      "position": {
+        "x": 4,
+        "y": 11
+      },
+      "metadata": {
+        "name": "NUTELLA® Hazelnut Spread with Cocoa 350g",
+        "category": "Jam, Honey and Spreads",
+        "price": 275,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/0000080177173_1_100x100_20240102.png"
+      }
+    },
+    {
+      "position": {
+        "x": 4,
+        "y": 12
+      },
+      "metadata": {
+        "name": "Kellogg's Corn Flakes 500g",
+        "category": "Breakfast Cereals",
+        "price": 250,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5059319014814_19_100x100_20240206.png"
+      }
+    },
+    {
+      "position": {
+        "x": 4,
+        "y": 13
+      },
+      "metadata": {
+        "name": "Huel Chocolate Flavour Ready-To-Drink Complete Meal 500ml",
+        "category": "Breakfast Drinks",
+        "price": 385,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5060495113291_19_100x100_20240206.png"
+      }
+    },
+    {
+      "position": {
+        "x": 4,
+        "y": 16
+      },
+      "metadata": {
+        "name": "Grenade Carb Killa High Protein Shake Fudge Brownie Flavoured 330ml",
+        "category": "Drinks To Go",
+        "price": 250,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5060221203630_1_100x100_20220714.png"
+      }
+    },
+    {
+      "position": {
+        "x": 5,
+        "y": 16
+      },
+      "metadata": {
+        "name": "Co-op Frozen Crinkle Cut Oven Chips 750g",
+        "category": "Frozen Chips and Potatoes",
+        "price": 200,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128687492_1_100x100_20231110.png"
+      }
+    },
+    {
+      "position": {
+        "x": 6,
+        "y": 16
+      },
+      "metadata": {
+        "name": "The Ice Co Party Ice Cubes 1kg",
+        "category": "Frozen Ice and Fruit",
+        "price": 135,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5012168879669_1_100x100_20230905.png"
+      }
+    },
+    {
+      "position": {
+        "x": 7,
+        "y": 3
+      },
+      "metadata": {
+        "name": "Co-op Watermelon Chunks 300g",
+        "category": "Fresh Fruit",
+        "price": 285,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128665322_1_100x100_20240201.png"
+      }
+    },
+    {
+      "position": {
+        "x": 7,
+        "y": 4
+      },
+      "metadata": {
+        "name": "Yorkshire Provender Vegan Moroccan Vegetable Tagine 560g",
+        "category": "Fresh Soup",
+        "price": 270,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5056053308780_1_100x100_20231118.png"
+      }
+    },
     {
       "position": {
         "x": 7,
         "y": 5
       },
-      "item": {
-        "name": "Bread",
-        "price": 200,
-        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129340051_1_100x100_20240206.png"
+      "metadata": {
+        "name": "Pollen + Grace Vegetable Moussaka 400g",
+        "category": "Ready Meals",
+        "price": 455,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5060470841768_19_100x100_20240207.png"
+      }
+    },
+    {
+      "position": {
+        "x": 7,
+        "y": 6
+      },
+      "metadata": {
+        "name": "Co-op Stonebaked Margherita 320g",
+        "category": "Pizza",
+        "price": 420,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129291063_1_100x100_20240202.png"
+      }
+    },
+    {
+      "position": {
+        "x": 7,
+        "y": 7
+      },
+      "metadata": {
+        "name": "Co-op Four Cheese Tortelloni 300g",
+        "category": "Fresh Pasta and Sauces",
+        "price": 250,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128595490_1_100x100_20240206.png"
+      }
+    },
+    {
+      "position": {
+        "x": 7,
+        "y": 8
+      },
+      "metadata": {
+        "name": "Sabra Houmous Classic 250g",
+        "category": "Dips, Coleslaw and Sandwich Fillings",
+        "price": 285,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/7290006567673_1_100x100_20221115.png"
+      }
+    },
+    {
+      "position": {
+        "x": 7,
+        "y": 9
+      },
+      "metadata": {
+        "name": "Co-op 4 Mini Pork Pies 200g",
+        "category": "Pies",
+        "price": 245,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128963831_1_100x100_20240202.png"
+      }
+    },
+    {
+      "position": {
+        "x": 7,
+        "y": 10
+      },
+      "metadata": {
+        "name": "Co-op Corned Beef 120g",
+        "category": "Beef and Lamb",
+        "price": 250,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128968393_1_100x100_20240113.png"
+      }
+    },
+    {
+      "position": {
+        "x": 7,
+        "y": 11
+      },
+      "metadata": {
+        "name": "Co-op BBQ Chicken Slices 130g",
+        "category": "Chicken, Turkey and Duck",
+        "price": 265,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128969291_1_100x100_20231212.png"
+      }
+    },
+    {
+      "position": {
+        "x": 7,
+        "y": 12
+      },
+      "metadata": {
+        "name": "Co-op Irresistible Air Dry Cured 6 Unsmoked Back Bacon Rashers 230g",
+        "category": "Bacon, Sausages and Pork",
+        "price": 370,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128995481_1_100x100_20210513.png"
+      }
+    },
+    {
+      "position": {
+        "x": 7,
+        "y": 13
+      },
+      "metadata": {
+        "name": "Graham's The Family Dairy Gold Top with Cream At The Top 1 Litre",
+        "category": "Fresh Milk",
+        "price": 180,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5025840001753_1_100x100_20210513.png"
+      }
+    },
+    {
+      "position": {
+        "x": 7,
+        "y": 16
+      },
+      "metadata": {
+        "name": "Co-op Goose Island Cheese Feast Pizza 510g",
+        "category": "Frozen Pizza",
+        "price": 400,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129337037_1_100x100_20240206.png"
+      }
+    },
+    {
+      "position": {
+        "x": 8,
+        "y": 3
+      },
+      "metadata": {
+        "name": "Co-op 3 Snack Pack Easy Peelers",
+        "category": "Fresh Fruit",
+        "price": 145,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129291629_1_100x100_20221115.png"
+      }
+    },
+    {
+      "position": {
+        "x": 8,
+        "y": 4
+      },
+      "metadata": {
+        "name": "Co-op 4 Kiwi Fruit",
+        "category": "Fresh Fruit",
+        "price": 225,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128789110_1_100x100_20240201.png"
+      }
+    },
+    {
+      "position": {
+        "x": 8,
+        "y": 5
+      },
+      "metadata": {
+        "name": "Co-op A Pinch of Ginger",
+        "category": "Fresh Vegetables and Potatoes",
+        "price": 90,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128280679_1_100x100_20221215.png"
+      }
+    },
+    {
+      "position": {
+        "x": 8,
+        "y": 6
+      },
+      "metadata": {
+        "name": "Co-op Avocados",
+        "category": "Fresh Salad",
+        "price": 195,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128606387_1_100x100_20240201.png"
+      }
+    },
+    {
+      "position": {
+        "x": 8,
+        "y": 7
+      },
+      "metadata": {
+        "name": "Co-op Organic Fairtrade 5 Bananas",
+        "category": "Organic Fruit and Vegetables",
+        "price": 180,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128861106_1_100x100_20230429.png"
+      }
+    },
+    {
+      "position": {
+        "x": 8,
+        "y": 8
+      },
+      "metadata": {
+        "name": "Co-op Responsibly Sourced 2 Smoked Mackerel Fillets 180g",
+        "category": "Cod, Haddock and Seabass",
+        "price": 420,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128722858_1_100x100_20231121.png"
+      }
+    },
+    {
+      "position": {
+        "x": 8,
+        "y": 9
+      },
+      "metadata": {
+        "name": "Co-op Irresistible Beech & Oak Smoked Salmon 100g",
+        "category": "Salmon and Smoked Salmon",
+        "price": 630,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128967686_1_100x100_20240113.png"
+      }
+    },
+    {
+      "position": {
+        "x": 8,
+        "y": 10
+      },
+      "metadata": {
+        "name": "Co-op Baby Potatoes 750g",
+        "category": "Co-op Steakhouse",
+        "price": 115,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128959629_1_100x100_20230930.png"
+      }
+    },
+    {
+      "position": {
+        "x": 8,
+        "y": 11
+      },
+      "metadata": {
+        "name": "Gü Inspirations Chocolate & Honeycomb 2 x 86.5g (173g)",
+        "category": "Chilled Desserts",
+        "price": 250,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5060425288129_1_100x100_20240203.png"
+      }
+    },
+    {
+      "position": {
+        "x": 8,
+        "y": 12
+      },
+      "metadata": {
+        "name": "innocent Plus Bolt from The Blue Guava & Lime Juice 750ml",
+        "category": "Chilled Juice and Smoothies",
+        "price": 425,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5038862138697_1_100x100_20240206.png"
+      }
+    },
+    {
+      "position": {
+        "x": 8,
+        "y": 13
+      },
+      "metadata": {
+        "name": "Flora Plant B+tter Spreadable Vegan Butter Alternative 450g",
+        "category": "Butter and Spreads",
+        "price": 350,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/8719200207974_1_100x100_20240206.png"
+      }
+    },
+    {
+      "position": {
+        "x": 8,
+        "y": 16
+      },
+      "metadata": {
+        "name": "Rowntree's Fruit Pastilles Lollies 4 x 65ml",
+        "category": "Ice Lollies",
+        "price": 320,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5010238297115_1_100x100_20221102.png"
+      }
+    },
+    {
+      "position": {
+        "x": 9,
+        "y": 16
+      },
+      "metadata": {
+        "name": "Co-op Irresistible West Country Cream Clotted Cream Vanilla Ice Cream 500ml",
+        "category": "Ice Cream Tubs",
+        "price": 370,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128594653_1_100x100_20210513.png"
       }
     },
     {
       "position": {
         "x": 10,
+        "y": 16
+      },
+      "metadata": {
+        "name": "Co Op Irresistible Special Cuvée Prosecco 75cl",
+        "category": "Gifting Drinks",
+        "price": 900,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128789936_1_100x100_20210513.png"
+      }
+    },
+    {
+      "position": {
+        "x": 11,
         "y": 3
       },
-      "item": {
-        "name": "Pizza",
+      "metadata": {
+        "name": "Soreen Banana Loaf 2 Slices 45g",
+        "category": "Vegetarian",
+        "price": 110,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5088722227078_1_100x100_20231007.png"
+      }
+    },
+    {
+      "position": {
+        "x": 11,
+        "y": 4
+      },
+      "metadata": {
+        "name": "Co-op Free From Porridge Oats 450g",
+        "category": "Co-op Free From",
+        "price": 240,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128770354_1_100x100_20210408.png"
+      }
+    },
+    {
+      "position": {
+        "x": 11,
+        "y": 5
+      },
+      "metadata": {
+        "name": "La For 2 Panini Rolls",
+        "category": "Wraps, Pittas and Thins",
+        "price": 105,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5060202390304_1_100x100_20231010.png"
+      }
+    },
+    {
+      "position": {
+        "x": 11,
+        "y": 6
+      },
+      "metadata": {
+        "name": "Schwartz Oregano 7g",
+        "category": "Herbs and Spices",
+        "price": 240,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000225034038_1_100x100_20221005.png"
+      }
+    },
+    {
+      "position": {
+        "x": 11,
+        "y": 7
+      },
+      "metadata": {
+        "name": "Knorr  Stock Cubes Chicken 8x 10 g",
+        "category": "Cooking Ingredients & Oils",
+        "price": 150,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000184161028_1_100x100_20240203.png"
+      }
+    },
+    {
+      "position": {
+        "x": 11,
+        "y": 8
+      },
+      "metadata": {
+        "name": "Batchelors Super Noodles BBQ Beef Flavour 90g",
+        "category": "Noodle Pots & Instant Snacks",
+        "price": 100,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000354405105_19_100x100_20240206.png"
+      }
+    },
+    {
+      "position": {
+        "x": 11,
+        "y": 9
+      },
+      "metadata": {
+        "name": "Hellmann's  Salad Dressing & Dip Real Caesar 250 ml",
+        "category": "Condiments, Pickles and Chutneys",
+        "price": 240,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/8720182302946_1_100x100_20230701.png"
+      }
+    },
+    {
+      "position": {
+        "x": 11,
+        "y": 10
+      },
+      "metadata": {
+        "name": "Co-op Mackerel Fillets in Brine 125g",
+        "category": "Tins and Packets",
+        "price": 110,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128247375_1_100x100_20230428.png"
+      }
+    },
+    {
+      "position": {
+        "x": 11,
+        "y": 11
+      },
+      "metadata": {
+        "name": "Barilla Arrabbiata 400g",
+        "category": "Cooking Sauces and Meal Kits",
+        "price": 265,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/8076809569118_1_100x100_20240124.png"
+      }
+    },
+    {
+      "position": {
+        "x": 11,
+        "y": 12
+      },
+      "metadata": {
+        "name": "Ben's Original Savoury Chicken Microwave Rice 220g",
+        "category": "Pasta, Rice and Noodles",
+        "price": 165,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5010034013957_19_100x100_20231027.png"
+      }
+    },
+    {
+      "position": {
+        "x": 11,
+        "y": 13
+      },
+      "metadata": {
+        "name": "Kings Platinum Edition Jerky Wagyu 45g",
+        "category": "Crisps, Savoury Popcorn and Rice Cakes",
+        "price": 345,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5060079652758_1_100x100_20210513.png"
+      }
+    },
+    {
+      "position": {
+        "x": 11,
+        "y": 16
+      },
+      "metadata": {
+        "name": "SIERRA Tequila Silver 50cl",
+        "category": "Liqueurs and other Spirits",
+        "price": 1950,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/4062400028004_1_100x100_20231031.png"
+      }
+    },
+    {
+      "position": {
+        "x": 12,
+        "y": 3
+      },
+      "metadata": {
+        "name": "Co-op GRO Meatball Marinara Linguine 370g",
+        "category": "Vegan",
+        "price": 380,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128792844_1_100x100_20220118.png"
+      }
+    },
+    {
+      "position": {
+        "x": 12,
+        "y": 4
+      },
+      "metadata": {
+        "name": "Co-op Whole Almonds 60g",
+        "category": "Nuts",
+        "price": 115,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129316254_1_100x100_20220322.png"
+      }
+    },
+    {
+      "position": {
+        "x": 12,
+        "y": 5
+      },
+      "metadata": {
+        "name": "Dove Men+Care Antiperspirant Aerosol Classic 200 ml",
+        "category": "Deodorants and Sprays",
+        "price": 270,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/8720181295584_19_100x100_20230329.png"
+      }
+    },
+    {
+      "position": {
+        "x": 12,
+        "y": 6
+      },
+      "metadata": {
+        "name": "Oral-B Satin Tape Dental Floss Mint 25m",
+        "category": "Dental Care",
+        "price": 250,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5010622017978_1_100x100_20240207.png"
+      }
+    },
+    {
+      "position": {
+        "x": 12,
+        "y": 7
+      },
+      "metadata": {
+        "name": "NIVEA NIVEA Original Care Lip Balm 4G",
+        "category": "Skin and Lip Care ",
+        "price": 165,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/4005900983886_19_100x100_20240207.png"
+      }
+    },
+    {
+      "position": {
+        "x": 12,
+        "y": 8
+      },
+      "metadata": {
+        "name": "L'Oreal Paris Shampoo by Elvive Extraordinary Oil for Nourishing Dry Hair 300ml",
+        "category": "Hair Care",
+        "price": 400,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/3600523524006_1_100x100_20240109.png"
+      }
+    },
+    {
+      "position": {
+        "x": 12,
+        "y": 9
+      },
+      "metadata": {
+        "name": "HARIBO Tangfastics Bag 175g",
+        "category": "Sweets",
+        "price": 135,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5012035927608_1_100x100_20230825.png"
+      }
+    },
+    {
+      "position": {
+        "x": 12,
+        "y": 10
+      },
+      "metadata": {
+        "name": "Co-op Free From Choc Bar 35g",
+        "category": "Chocolate Bars and Blocks",
+        "price": 76,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128656375_1_100x100_20210513.png"
+      }
+    },
+    {
+      "position": {
+        "x": 12,
+        "y": 11
+      },
+      "metadata": {
+        "name": "Maltesers Milk Chocolate & Honeycomb Bites Bag Fairtrade 102g",
+        "category": "Chocolate Bags and Multipacks",
+        "price": 195,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000159530736_1_100x100_20230517.png"
+      }
+    },
+    {
+      "position": {
+        "x": 12,
+        "y": 12
+      },
+      "metadata": {
+        "name": "Propercorn Salted Caramel Popcorn 90g",
+        "category": "Sweet Popcorn and Rice Cakes",
+        "price": 150,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5060283762526_19_100x100_20230406.png"
+      }
+    },
+    {
+      "position": {
+        "x": 12,
+        "y": 13
+      },
+      "metadata": {
+        "name": "Walkers Sensations Mango & Chilli Chutney Sharing Poppadoms 82.5g",
+        "category": "Crisps, Savoury Popcorn and Rice Cakes",
+        "price": 175,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000328806181_19_100x100_20230623.png"
+      }
+    },
+    {
+      "position": {
+        "x": 12,
+        "y": 16
+      },
+      "metadata": {
+        "name": "Auchentoshan American Oak Single Malt Scotch Whisky 70cl",
+        "category": "Whisky",
+        "price": 2500,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5010496005521_1_100x100_20240116.png"
+      }
+    },
+    {
+      "position": {
+        "x": 13,
+        "y": 0
+      },
+      "metadata": {
+        "name": "Airwaves Menthol & Eucalyptus Sugarfree Chewing Gum 10 Pieces",
+        "category": "Mints and Chewing Gum",
+        "price": 75,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/0000050173167_1_100x100_20230517.png"
+      }
+    },
+    {
+      "position": {
+        "x": 13,
+        "y": 16
+      },
+      "metadata": {
+        "name": "Hendrick's Gin 70cl",
+        "category": "Gin",
+        "price": 3600,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5010327755014_1_100x100_20210916.png"
+      }
+    },
+    {
+      "position": {
+        "x": 14,
+        "y": 0
+      },
+      "metadata": {
+        "name": "Graze Cocoa Vanilla Oat Boosts 4 x 30g (120g)",
+        "category": "Snacking Bars and Bags",
+        "price": 200,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5055958701054_1_100x100_20240206.png"
+      }
+    },
+    {
+      "position": {
+        "x": 14,
+        "y": 16
+      },
+      "metadata": {
+        "name": "Co Op Imperial Vodka 70cl",
+        "category": "Vodka",
+        "price": 1450,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128123112_1_100x100_20210513.png"
+      }
+    },
+    {
+      "position": {
+        "x": 15,
+        "y": 3
+      },
+      "metadata": {
+        "name": "Energizer Max AA Batteries, Alkaline, 4 Pack",
+        "category": "Stationery, Batteries and Toys",
+        "price": 525,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/7638900437645_19_100x100_20220813.png"
+      }
+    },
+    {
+      "position": {
+        "x": 15,
+        "y": 4
+      },
+      "metadata": {
+        "name": "Gaviscon Double Action Mint Flavour 24 Chewable Tablets",
+        "category": "Medicines",
+        "price": 685,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000158071346_1_100x100_20230727.png"
+      }
+    },
+    {
+      "position": {
+        "x": 15,
+        "y": 5
+      },
+      "metadata": {
+        "name": "Fairy Original All In One Dishwasher Tablets Regular, 25 Tablets",
+        "category": "Dishwasher and Washing Up Liquid",
         "price": 500,
-        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000129337969_1_100x100_20240202.png"
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/8006540910665_1_100x100_20230622.png"
+      }
+    },
+    {
+      "position": {
+        "x": 15,
+        "y": 6
+      },
+      "metadata": {
+        "name": "Febreze 3Volution Air Freshener Plug In Refill Cotton Fresh 20ML",
+        "category": "Household Essentials",
+        "price": 350,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/4015600499952_1_100x100_20240116.png"
+      }
+    },
+    {
+      "position": {
+        "x": 15,
+        "y": 7
+      },
+      "metadata": {
+        "name": "Astonish Protect + Care Anti-Bacterial Handwash Aloe Vera 600ml",
+        "category": "Shower, Bath and Soap",
+        "price": 105,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5060060211834_1_100x100_20220808.png"
+      }
+    },
+    {
+      "position": {
+        "x": 15,
+        "y": 8
+      },
+      "metadata": {
+        "name": "Aptamil 2 Follow On Milk 6-12 Months 800g",
+        "category": "Formula and Milk",
+        "price": 1400,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5051594006829_19_100x100_20240206.png"
+      }
+    },
+    {
+      "position": {
+        "x": 15,
+        "y": 9
+      },
+      "metadata": {
+        "name": "Andrex Classic Clean Washlets Single Pack 36 Sheets",
+        "category": "Tissue and Wipes",
+        "price": 200,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5029053581866_1_100x100_20230503.png"
+      }
+    },
+    {
+      "position": {
+        "x": 15,
+        "y": 10
+      },
+      "metadata": {
+        "name": "Co-op Quilted Bathroom Tissue 9 Rolls 3-Ply",
+        "category": "Toilet Roll",
+        "price": 525,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128732840_1_100x100_20230412.png"
+      }
+    },
+    {
+      "position": {
+        "x": 15,
+        "y": 11
+      },
+      "metadata": {
+        "name": "Zoflora Concentrated Multipurpose Disinfectant Linen Fresh 120ml",
+        "category": "Cleaning",
+        "price": 200,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5011309276176_1_100x100_20230501.png"
+      }
+    },
+    {
+      "position": {
+        "x": 15,
+        "y": 12
+      },
+      "metadata": {
+        "name": "Lenor Outdoorable Fabric Conditioner Spring Awakening 55 Washes",
+        "category": "Laundry and Detergents",
+        "price": 300,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/8001090719720_1_100x100_20240116.png"
+      }
+    },
+    {
+      "position": {
+        "x": 15,
+        "y": 13
+      },
+      "metadata": {
+        "name": "Gordon's London Dry Gin and Tonic 5% vol 4 x 250ml Ready to Drink Premix Can Multipack",
+        "category": "Pre-Mix and Cocktail Cans",
+        "price": 685,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000289928489_1_100x100_20231221.png"
+      }
+    },
+    {
+      "position": {
+        "x": 15,
+        "y": 16
+      },
+      "metadata": {
+        "name": "Co-op Lime Tree Merlot 75cl",
+        "category": "Red Wine",
+        "price": 600,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128578738_1_100x100_20210513.png"
+      }
+    },
+    {
+      "position": {
+        "x": 16,
+        "y": 3
+      },
+      "metadata": {
+        "name": "Mr Muscle Gel Sink & Drain Unblocker 1L",
+        "category": "Bigger Packs",
+        "price": 500,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000204998382_1_100x100_20240130.png"
+      }
+    },
+    {
+      "position": {
+        "x": 16,
+        "y": 4
+      },
+      "metadata": {
+        "name": "Lindt LINDOR 28g",
+        "category": "Easter Eggs and Chocolate",
+        "price": 75,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/0000042000914_1_100x100_20240201.png"
+      }
+    },
+    {
+      "position": {
+        "x": 16,
+        "y": 5
+      },
+      "metadata": {
+        "name": "Dr. Oetker 18 Party Candles",
+        "category": "Party Essentials",
+        "price": 155,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000254017941_1_100x100_20230622.png"
+      }
+    },
+    {
+      "position": {
+        "x": 16,
+        "y": 6
+      },
+      "metadata": {
+        "name": "Cadbury Dairy Milk 360g",
+        "category": "Gifting Chocolates",
+        "price": 450,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/7622210379801_1_100x100_20240117.png"
+      }
+    },
+    {
+      "position": {
+        "x": 16,
+        "y": 7
+      },
+      "metadata": {
+        "name": "Co-op Meaty Terrine with Chicken & Game +1 Year 150g",
+        "category": "Dog and Puppy Food",
+        "price": 75,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128781183_1_100x100_20210513.png"
+      }
+    },
+    {
+      "position": {
+        "x": 16,
+        "y": 8
+      },
+      "metadata": {
+        "name": "Co-op Sunflower Oil 1 Litre",
+        "category": "World Foods",
+        "price": 255,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128890618_1_100x100_20230204.png"
+      }
+    },
+    {
+      "position": {
+        "x": 16,
+        "y": 9
+      },
+      "metadata": {
+        "name": "Schweppes Slimline Tonic Water 1L",
+        "category": "Tonic and Mixers",
+        "price": 195,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5449000133380_1_100x100_20221123.png"
+      }
+    },
+    {
+      "position": {
+        "x": 16,
+        "y": 10
+      },
+      "metadata": {
+        "name": "Nestle Pure Life Still Spring Water 12x500ml",
+        "category": "Water and Flavoured Water",
+        "price": 280,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/7613031722662_19_100x100_20240206.png"
+      }
+    },
+    {
+      "position": {
+        "x": 16,
+        "y": 11
+      },
+      "metadata": {
+        "name": "Co-op Diet Sparkling Lemonade 2 Litre",
+        "category": "Fizzy Drinks",
+        "price": 65,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128008792_1_100x100_20210513.png"
+      }
+    },
+    {
+      "position": {
+        "x": 16,
+        "y": 12
+      },
+      "metadata": {
+        "name": "Robinsons Fruit Shoot Apple & Blackcurrant 4 x 200ml",
+        "category": "Squash and Cordials",
+        "price": 210,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5010102105416_19_100x100_20240125.png"
+      }
+    },
+    {
+      "position": {
+        "x": 16,
+        "y": 13
+      },
+      "metadata": {
+        "name": "Stella Artois Unfiltered Bottles 4 x 330ml",
+        "category": "Lager",
+        "price": 665,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5014379017106_1_100x100_20220427.png"
+      }
+    },
+    {
+      "position": {
+        "x": 16,
+        "y": 16
+      },
+      "metadata": {
+        "name": "Co-op Lime Tree Chardonnay 75cl",
+        "category": "White Wine",
+        "price": 600,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128240895_1_100x100_20210513.png"
+      }
+    },
+    {
+      "position": {
+        "x": 17,
+        "y": 16
+      },
+      "metadata": {
+        "name": "Co-op Côtes Du Rhône 2020 75cl",
+        "category": "Rose Wine",
+        "price": 715,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128067928_1_100x100_20220326.png"
+      }
+    },
+    {
+      "position": {
+        "x": 18,
+        "y": 16
+      },
+      "metadata": {
+        "name": "Co-op Cava Rosado Brut 75cl",
+        "category": "Prosecco, Champagne and Sparkling",
+        "price": 750,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5000128610810_1_100x100_20210513.png"
+      }
+    },
+    {
+      "position": {
+        "x": 19,
+        "y": 12
+      },
+      "metadata": {
+        "name": "Budweiser Lager Beer Bottle 660ml",
+        "category": "Chilled Beer and Wine",
+        "price": 300,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5014379004533_1_100x100_20211211.png"
+      }
+    },
+    {
+      "position": {
+        "x": 19,
+        "y": 13
+      },
+      "metadata": {
+        "name": "FINCA LAS MORAS Pinot Grigio 75cl",
+        "category": "Chilled Beer and Wine",
+        "price": 650,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/7791540091193_1_100x100_20220708.png"
+      }
+    },
+    {
+      "position": {
+        "x": 19,
+        "y": 14
+      },
+      "metadata": {
+        "name": "Thatchers Blood Orange Cider Cans 4 x 440ml",
+        "category": "Cider",
+        "price": 725,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/5020628002618_1_100x100_20231129.png"
+      }
+    },
+    {
+      "position": {
+        "x": 19,
+        "y": 15
+      },
+      "metadata": {
+        "name": "Peroni Nastro Azzurro 0.0% 4 x 330ml",
+        "category": "No and Low Alcohol",
+        "price": 450,
+        "icon": "https://rt-1-pr-euw-retailapis-end-01.azureedge.net/8008440514011_19_100x100_20231206.png"
       }
     }
   ],
   "checkouts": [
     {
       "position": {
-        "x": 14,
+        "x": 19,
+        "y": 1
+      }
+    },
+    {
+      "position": {
+        "x": 19,
+        "y": 3
+      }
+    },
+    {
+      "position": {
+        "x": 19,
+        "y": 5
+      }
+    },
+    {
+      "position": {
+        "x": 19,
+        "y": 7
+      }
+    },
+    {
+      "position": {
+        "x": 19,
         "y": 9
+      }
+    },
+    {
+      "position": {
+        "x": 19,
+        "y": 11
       }
     }
   ],
   "doors": [
     {
       "position": {
-        "x": 0,
+        "x": 5,
+        "y": 0
+      }
+    },
+    {
+      "position": {
+        "x": 6,
         "y": 0
       }
     }
   ],
-  "walls": []
+  "walls": [
+    {
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 1
+      }
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 4
+      }
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 5
+      }
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 6
+      }
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 7
+      }
+    },
+    {
+      "position": {
+        "x": 0,
+        "y": 16
+      }
+    },
+    {
+      "position": {
+        "x": 1,
+        "y": 0
+      }
+    },
+    {
+      "position": {
+        "x": 3,
+        "y": 0
+      }
+    },
+    {
+      "position": {
+        "x": 4,
+        "y": 0
+      }
+    },
+    {
+      "position": {
+        "x": 7,
+        "y": 0
+      }
+    },
+    {
+      "position": {
+        "x": 8,
+        "y": 0
+      }
+    },
+    {
+      "position": {
+        "x": 9,
+        "y": 0
+      }
+    },
+    {
+      "position": {
+        "x": 10,
+        "y": 0
+      }
+    },
+    {
+      "position": {
+        "x": 11,
+        "y": 0
+      }
+    },
+    {
+      "position": {
+        "x": 12,
+        "y": 0
+      }
+    },
+    {
+      "position": {
+        "x": 15,
+        "y": 0
+      }
+    },
+    {
+      "position": {
+        "x": 16,
+        "y": 0
+      }
+    },
+    {
+      "position": {
+        "x": 17,
+        "y": 0
+      }
+    },
+    {
+      "position": {
+        "x": 18,
+        "y": 0
+      }
+    },
+    {
+      "position": {
+        "x": 19,
+        "y": 0
+      }
+    },
+    {
+      "position": {
+        "x": 19,
+        "y": 2
+      }
+    },
+    {
+      "position": {
+        "x": 19,
+        "y": 4
+      }
+    },
+    {
+      "position": {
+        "x": 19,
+        "y": 6
+      }
+    },
+    {
+      "position": {
+        "x": 19,
+        "y": 8
+      }
+    },
+    {
+      "position": {
+        "x": 19,
+        "y": 10
+      }
+    },
+    {
+      "position": {
+        "x": 19,
+        "y": 16
+      }
+    }
+  ],
+  "waypoints": [
+    {
+      "position": {
+        "x": 1,
+        "y": 2
+      }
+    },
+    {
+      "position": {
+        "x": 1,
+        "y": 3
+      }
+    },
+    {
+      "position": {
+        "x": 1,
+        "y": 14
+      }
+    },
+    {
+      "position": {
+        "x": 1,
+        "y": 15
+      }
+    },
+    {
+      "position": {
+        "x": 2,
+        "y": 1
+      }
+    },
+    {
+      "position": {
+        "x": 2,
+        "y": 2
+      }
+    },
+    {
+      "position": {
+        "x": 2,
+        "y": 14
+      }
+    },
+    {
+      "position": {
+        "x": 2,
+        "y": 15
+      }
+    },
+    {
+      "position": {
+        "x": 5,
+        "y": 1
+      }
+    },
+    {
+      "position": {
+        "x": 5,
+        "y": 2
+      }
+    },
+    {
+      "position": {
+        "x": 5,
+        "y": 14
+      }
+    },
+    {
+      "position": {
+        "x": 5,
+        "y": 15
+      }
+    },
+    {
+      "position": {
+        "x": 6,
+        "y": 1
+      }
+    },
+    {
+      "position": {
+        "x": 6,
+        "y": 2
+      }
+    },
+    {
+      "position": {
+        "x": 6,
+        "y": 14
+      }
+    },
+    {
+      "position": {
+        "x": 6,
+        "y": 15
+      }
+    },
+    {
+      "position": {
+        "x": 9,
+        "y": 2
+      }
+    },
+    {
+      "position": {
+        "x": 9,
+        "y": 14
+      }
+    },
+    {
+      "position": {
+        "x": 9,
+        "y": 15
+      }
+    },
+    {
+      "position": {
+        "x": 10,
+        "y": 2
+      }
+    },
+    {
+      "position": {
+        "x": 10,
+        "y": 14
+      }
+    },
+    {
+      "position": {
+        "x": 10,
+        "y": 15
+      }
+    },
+    {
+      "position": {
+        "x": 13,
+        "y": 1
+      }
+    },
+    {
+      "position": {
+        "x": 13,
+        "y": 2
+      }
+    },
+    {
+      "position": {
+        "x": 13,
+        "y": 14
+      }
+    },
+    {
+      "position": {
+        "x": 13,
+        "y": 15
+      }
+    },
+    {
+      "position": {
+        "x": 14,
+        "y": 1
+      }
+    },
+    {
+      "position": {
+        "x": 14,
+        "y": 2
+      }
+    },
+    {
+      "position": {
+        "x": 14,
+        "y": 14
+      }
+    },
+    {
+      "position": {
+        "x": 14,
+        "y": 15
+      }
+    },
+    {
+      "position": {
+        "x": 17,
+        "y": 2
+      }
+    },
+    {
+      "position": {
+        "x": 17,
+        "y": 14
+      }
+    },
+    {
+      "position": {
+        "x": 17,
+        "y": 15
+      }
+    },
+    {
+      "position": {
+        "x": 18,
+        "y": 1
+      }
+    },
+    {
+      "position": {
+        "x": 18,
+        "y": 2
+      }
+    },
+    {
+      "position": {
+        "x": 18,
+        "y": 14
+      }
+    },
+    {
+      "position": {
+        "x": 18,
+        "y": 15
+      }
+    }
+  ]
 }

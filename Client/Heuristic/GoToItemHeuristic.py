@@ -1,20 +1,17 @@
-from Agent.AgentState import AgentState
-from Heuristic.Heuristic import Heuristic
+from Heuristic.HeuristicWithParameters import HeuristicWithParameters
+from Heuristic.NavigationHeuristic import NavigationHeuristic
 from Store.Store import Store
-from Utils import distanceBetweenPoints
 
 
-class GoToItemHeuristic(Heuristic):
-    def __init__(self, params: dict, store: Store):
+class GoToItemHeuristic(NavigationHeuristic, HeuristicWithParameters):
+    def __init__(self, store: Store, params: dict):
         super().__init__(store)
 
-        self.itemName = params["itemName"]
+        self.category = params["category"]
         self.shelf = None
 
         self.store.MapObservable.subscribe(lambda _: self.getShelf())
 
     def getShelf(self):
-        self.shelf = next(shelf for shelf in self.store.getShelves() if shelf.name == self.itemName)
-
-    def evaluate(self, state: AgentState) -> float:
-        return distanceBetweenPoints(state.position, self.shelf.position) - 1.0
+        self.shelf = next(shelf for shelf in self.store.getShelves() if shelf.category == self.category)
+        self.setDestination(self.shelf.position, -1.0)

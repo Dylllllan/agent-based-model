@@ -4,6 +4,9 @@
 # Server output
 Output/
 
+# Client cache folder
+Cache/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

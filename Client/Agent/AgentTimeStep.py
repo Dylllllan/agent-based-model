@@ -51,9 +51,6 @@ class AgentTimeStep:
               bestHeuristic)
         self.client.sendCommit()
 
-        if bestHeuristic == 0:
-            self.agent.nextHeuristicSet()
-
     @staticmethod
     def getPosition(position: tuple, direction: tuple) -> tuple:
         return position[0] + direction[0], position[1] + direction[1]

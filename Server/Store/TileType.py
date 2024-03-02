@@ -6,4 +6,5 @@ class TileType(IntEnum):
     SHELF = 1,
     CHECKOUT = 2,
     DOOR = 3,
-    WALL = 4
+    WALL = 4,
+    WAYPOINT = 5

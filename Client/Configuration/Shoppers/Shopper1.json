@@ -3,35 +3,15 @@
   "heuristics": [
     [
       {
-        "name": "GoToCheckoutHeuristic"
-      }
-    ],
-    [
-      {
-        "name": "GoToDoorHeuristic"
-      }
-    ],
-    [
-      {
-        "name": "GoToCheckoutHeuristic"
-      }
-    ],
-    [
-      {
-        "name": "GoToDoorHeuristic"
-      }
-    ],
-    [
-      {
         "name": "GoToItemHeuristic",
         "parameters": {
-          "itemName": "Bread"
+          "category": "Bread Loaves"
         }
       },
       {
         "name": "PickUpItemHeuristic",
         "parameters": {
-          "itemName": "Bread"
+          "category": "Bread Loaves"
         }
       }
     ],

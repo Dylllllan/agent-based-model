@@ -52,6 +52,9 @@ class Store:
     def getDoors(self) -> list:
         return [tile for tile in self.map if tile.type == TileType.DOOR]
 
+    def getWaypoints(self) -> list:
+        return [tile for tile in self.map if tile.type == TileType.WAYPOINT]
+
     def getAgent(self, agentId: str) -> AgentState:
         return next(agent for agent in self.agents if agent.id == agentId)
 
@@ -73,6 +76,6 @@ class Store:
         tileType = TileType(tileData["type"])
 
         if tileType == TileType.SHELF:
-            return Shelf(tileData["name"], tileData["price"], position, tileData["icon"])
+            return Shelf(position, tileData["name"], tileData["category"], tileData["price"], tileData["icon"])
         else:
             return Tile(position, tileType)
