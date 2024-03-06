@@ -1,4 +1,3 @@
-import os
 import sys
 
 import pygame
@@ -6,7 +5,6 @@ from reactivex import Subject
 
 from Agent.Agent import Agent
 from Agent.AgentClient import AgentClient
-from Graphics.Renderer import Renderer
 from Store.Store import Store
 
 HOST = "localhost"
@@ -19,15 +17,11 @@ if __name__ == "__main__":
     clock = pygame.time.Clock()
     tickSubject = Subject()
 
+    # Create an agent
     client = AgentClient(HOST, PORT, tickSubject)
-
     store = Store(client.StoreObservable, client.StateObservable)
     # Configuration file path passed in as an argument
     agent = Agent(arguments[0], store, client)
-
-    # If GRAPHICS_MODE environment variable is set, run the graphics renderer
-    if os.environ.get("GRAPHICS_MODE"):
-        renderer = Renderer(tickSubject, store, client.ConnectionObservable)
 
     while True:
         tickSubject.on_next(None)

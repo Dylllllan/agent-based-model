@@ -10,9 +10,15 @@ OUTPUT_DIRECTORY = "Output"
 if not os.path.exists(OUTPUT_DIRECTORY):
     os.makedirs(OUTPUT_DIRECTORY)
 
+# If the CLEAR_OUTPUT environment variable is set, clear the directory
+if os.environ.get("CLEAR_OUTPUT"):
+    print("Clearing output directory")
+    for file in os.listdir(OUTPUT_DIRECTORY):
+        os.remove(f"{OUTPUT_DIRECTORY}/{file}")
+
 
 class ItemObserver(Observer):
-    def __init__(self, item: Item, startTime: int, store: Store):
+    def __init__(self, item: Item, startTime: int, store: Store, shoplifter: bool = False):
         super().__init__()
 
         self.item = item
@@ -21,8 +27,8 @@ class ItemObserver(Observer):
         self.filePath = f"{OUTPUT_DIRECTORY}/{item.category}_{item.id}.csv"
 
         # Add item information to the file
-        self.writeLine("name, category, price")
-        self.writeLine(f"{item.name}, {item.category}, {item.price}")
+        self.writeLine("name, category, price, shoplifter")
+        self.writeLine(f"\"{item.name}\", \"{item.category}\", {item.price}, {shoplifter}")
 
         # Add a divider line
         self.writeLine("---")

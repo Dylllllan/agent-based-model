@@ -1,5 +1,4 @@
 import json
-from sys import exit
 
 from PodSixNet.Connection import ConnectionListener, connection
 from reactivex import Subject, Observable
@@ -13,8 +12,8 @@ from Agent.IAgentClient import IAgentClient
 
 class AgentClient(ConnectionListener, DisposableBase, IAgentClient):
     def __init__(self, host, port, tickObservable: Observable):
-        self.Connect((host, port))
         self.compositeDisposable = CompositeDisposable()
+        self.isClosed = False
 
         self.connectionSubject = Subject()
         self.compositeDisposable.add(self.connectionSubject)
@@ -30,6 +29,9 @@ class AgentClient(ConnectionListener, DisposableBase, IAgentClient):
 
         self.previewSubject = Subject()
         self.compositeDisposable.add(self.previewSubject)
+
+        # Connect to the server after the client has been initialised
+        self.Connect((host, port))
 
         tickObserver = tickObservable.subscribe(on_next=lambda _: self.Pump())
         self.compositeDisposable.add(tickObserver)
@@ -91,13 +93,12 @@ class AgentClient(ConnectionListener, DisposableBase, IAgentClient):
         self.connectionSubject.on_next(None)
 
     def Network_error(self, data):
-        print("Network error:", data["error"][1])
+        print("Network error:", data["error"])
         connection.Close()
         self.dispose()
 
     def Network_disconnected(self, data):
         print("Disconnected from server")
-        self.connectionSubject.on_completed()
         self.dispose()
 
     def Close(self):
@@ -109,5 +110,11 @@ class AgentClient(ConnectionListener, DisposableBase, IAgentClient):
         super().Pump()
 
     def dispose(self):
+        if self.isClosed:
+            return
+        self.isClosed = True
+
+        # Complete the connection subject
+        self.connectionSubject.on_completed()
+        # Dispose all subjects
         self.compositeDisposable.dispose()
-        exit()

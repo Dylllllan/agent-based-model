@@ -19,8 +19,8 @@ class Agent(IAgent):
         self.client = agentClient
 
         self.store = store
-        self.heuristicIterator = iter(HeuristicFactory.createHeuristics(config["heuristics"], store))
-        self.currentHeuristicSet = next(self.heuristicIterator)
+        self.heuristicSetIterator = iter(HeuristicFactory.createHeuristics(config["heuristics"], store))
+        self.currentHeuristicSet = next(self.heuristicSetIterator)
 
         # When the client is connected, send the agent type to the server
         self.client.ConnectionObservable.subscribe(lambda _: self.client.sendInit(AgentType[config["agentType"]]))
@@ -38,7 +38,7 @@ class Agent(IAgent):
 
     def nextTimeStep(self):
         currentState = self.store.getAgent(self.agentId)
-        if self.evaluateHeuristics(currentState) == 0:
+        if self.evaluateHeuristics(currentState) <= 0:
             self.nextHeuristicSet()
 
         # Create a new time step
@@ -46,13 +46,12 @@ class Agent(IAgent):
         self.currentTimeStep = AgentTimeStep(self.agentId, self.store, self.client, self)
 
     def evaluateHeuristics(self, state: AgentState) -> float:
-        # print("Evaluating heuristics", self.currentHeuristicSetIndex)
-        # print("There are", len(self.heuristics), "heuristic sets")
         return sum([heuristic.evaluate(state) for heuristic in self.currentHeuristicSet])
 
     def nextHeuristicSet(self):
         try:
-            self.currentHeuristicSet = next(self.heuristicIterator)
+            # print("Next heuristic set")
+            self.currentHeuristicSet = next(self.heuristicSetIterator)
         except StopIteration:
-            print("No more heuristic sets")
+            # print("No more heuristic sets")
             self.client.Close()

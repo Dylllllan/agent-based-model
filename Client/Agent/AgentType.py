@@ -4,4 +4,5 @@ from enum import IntEnum
 class AgentType(IntEnum):
     SHOPPER = 0,
     GUARD = 1,
-    SHOPLIFTER = 2
+    SHOPLIFTER = 2,
+    SPECTATOR = 3

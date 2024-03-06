@@ -36,11 +36,16 @@ class Agent(IAgent, DisposableBase):
         item = Item(itemState, self.position)
         self.compositeDisposable.add(item)
 
+        # Set the position for the current timestep
+        self.setPosition(self.position)
+
         self.items.append(item)
         self.itemSubject.on_next(item)
 
     def setPaid(self, paid: bool):
         self.paid = paid
+        # Set the position for the current timestep
+        self.setPosition(self.position)
 
     def toAgentState(self) -> AgentState:
         return AgentState(self.id, self.type, self.position, self.items, self.paid)

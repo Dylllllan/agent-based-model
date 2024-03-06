@@ -1,0 +1,14 @@
+{
+  "agentType": "SHOPLIFTER",
+  "heuristics": [
+    {
+      "name": "GetRandomItemHeuristic"
+    },
+    {
+      "name": "WanderingHeuristic"
+    },
+    {
+      "name": "ExitStoreHeuristic"
+    }
+  ]
+}

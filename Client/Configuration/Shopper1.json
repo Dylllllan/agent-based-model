@@ -1,0 +1,14 @@
+{
+  "agentType": "SHOPPER",
+  "heuristics": [
+    {
+      "name": "GetRandomItemHeuristic"
+    },
+    {
+      "name": "CheckoutHeuristic"
+    },
+    {
+      "name": "ExitStoreHeuristic"
+    }
+  ]
+}

@@ -43,17 +43,28 @@ class Store:
     def getTile(self, position: tuple) -> Tile:
         return self.map[(position[1] * self.width) + position[0]]
 
+    def getTilesOfType(self, tileType: TileType) -> list:
+        return [tile for tile in self.map if tile.type == tileType]
+
+    def getMovableTiles(self) -> list:
+        # Union a list of type TILE and WAYPOINT
+        return self.getTilesOfType(TileType.TILE) + self.getTilesOfType(TileType.WAYPOINT)
+
     def getShelves(self) -> list:
-        return [tile for tile in self.map if tile.type == TileType.SHELF]
+        return self.getTilesOfType(TileType.SHELF)
 
     def getCheckouts(self) -> list:
-        return [tile for tile in self.map if tile.type == TileType.CHECKOUT]
+        return self.getTilesOfType(TileType.CHECKOUT)
 
     def getDoors(self) -> list:
-        return [tile for tile in self.map if tile.type == TileType.DOOR]
+        return self.getTilesOfType(TileType.DOOR)
 
     def getWaypoints(self) -> list:
-        return [tile for tile in self.map if tile.type == TileType.WAYPOINT]
+        return self.getTilesOfType(TileType.WAYPOINT)
+
+    # Get a list of all unique item categories in the store
+    def getItemCategories(self) -> list:
+        return list(set([shelf.category for shelf in self.getShelves()]))
 
     def getAgent(self, agentId: str) -> AgentState:
         return next(agent for agent in self.agents if agent.id == agentId)

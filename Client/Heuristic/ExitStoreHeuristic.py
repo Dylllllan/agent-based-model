@@ -4,7 +4,7 @@ from Heuristic.NavigationHeuristic import NavigationHeuristic
 from Store.Store import Store
 
 
-class GoToDoorHeuristic(NavigationHeuristic):
+class ExitStoreHeuristic(NavigationHeuristic):
     def __init__(self, store: Store):
         super().__init__(store)
 

@@ -9,13 +9,12 @@ from Store.ItemObserver import ItemObserver
 from Store.Store import Store
 from Store.TileType import TileType
 
-CONFIGURATION_PATH = "Configuration/store1.json"
 MIN_PLAYERS = 1
 
 
 class Game:
-    def __init__(self):
-        self.store = Store(CONFIGURATION_PATH)
+    def __init__(self, configFilePath: str):
+        self.store = Store(configFilePath)
 
         self.agents = []
         self.addedAgentQueue = []
@@ -35,7 +34,7 @@ class Game:
 
         itemObserver = agent.ItemObservable.subscribe(
             lambda item: item.addPositionObserver(
-                ItemObserver(item, self.timeStep, self.store)
+                ItemObserver(item, self.timeStep, self.store, agentType == AgentType.SHOPLIFTER)
             )
         )
         agent.compositeDisposable.add(itemObserver)
@@ -43,15 +42,27 @@ class Game:
         # Send an initial message to the agent
         agent.channel.SendInit(agent.id, self.store)
 
-        if len(self.addedAgentQueue) == MIN_PLAYERS and not self.running:
+        if len(self.getPendingPlayingAgents()) == MIN_PLAYERS and not self.running:
             # Start the game
             self.nextTimeStep()
 
         return agent
 
+    def getPendingPlayingAgents(self) -> list:
+        # The agents in the queue that are not spectators
+        return [agent for agent in self.addedAgentQueue if agent.type != AgentType.SPECTATOR]
+
+    def getPlayingAgents(self) -> list:
+        return [agent for agent in self.agents if agent.type != AgentType.SPECTATOR]
+
     def removeAgent(self, agent: Agent):
         # Queue the agent as removed on the next round
         self.removedAgentQueue.append(agent)
+
+    def sendStateToAgents(self):
+        state = StateMessage(self.timeStep, self.getPlayingAgents())
+        for agent in self.agents:
+            agent.channel.SendState(state)
 
     def nextTimeStep(self):
         print("Time step " + str(self.timeStep) + " complete. Starting next time step.")
@@ -74,27 +85,26 @@ class Game:
 
         self.removedAgentQueue.clear()
 
-        # If there are no agents, pause the game
-        if len(self.agents) == 0:
-            print("No agents remaining. Pausing game.")
+        # If there are no playing agents, pause the game
+        if len(self.getPlayingAgents()) == 0:
+            print("No playing agents remaining. Pausing game.")
+
             self.running = False
+            self.sendStateToAgents()
+
             return
 
-        print("Continuing game with " + str(len(self.agents)) + " agents.")
+        # print("Continuing game with " + str(len(self.agents)) + " agents.")
 
         # Increment the time step
         self.timeStep += 1
         self.running = True
 
-        # Create a state message for the current time step
-        state = StateMessage(self.timeStep, self.agents)
-
-        # Send the next time step state to all agents
-        for agent in self.agents:
-            agent.channel.SendState(state)
+        # Send the next timestep state to all agents
+        self.sendStateToAgents()
 
         # Create the next time step
-        self.currentStep = GameTimeStep(self.timeStep, self.agents, self.store)
+        self.currentStep = GameTimeStep(self.timeStep, self.getPlayingAgents(), self.store)
 
         # Subscribe to the complete observable
         completeObserver = self.currentStep.CompleteObservable.subscribe(

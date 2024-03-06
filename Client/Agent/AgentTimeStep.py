@@ -1,4 +1,8 @@
+import random
+
 from reactivex import from_iterable, zip
+from reactivex.disposable import CompositeDisposable
+from reactivex.operators import min_by
 
 from Agent.AgentState import AgentState
 from Agent.IAgent import IAgent
@@ -13,42 +17,50 @@ class AgentTimeStep:
 
         self.store = store
         self.currentState = self.store.getAgent(agentId)
-        print(self.currentState.position)
 
         directions = self.store.getDirectionsFromPosition(self.currentState.position)
         self.directions = iter(directions)
 
-        self.directionToHeuristicMap = {}
+        self.compositeDisposable = CompositeDisposable()
 
-        # Observable aggregation (likely to use zip)
-        # How do we map the two together while also requesting the next one? Do we have to track the index?
-        # No! Let's use an iterator. One the zip has completed, we can then evaluate the best heuristics
-        self.zipObserver = zip(from_iterable(directions), self.client.PreviewObservable).subscribe(
-            on_next=lambda preview: self.onPreviewReceived(preview[0], AgentState(preview[1]))
+        # Combine the directions with the resulting preview from the server
+        zipObservable = zip(from_iterable(directions), self.client.PreviewObservable)
+
+        # Get the next preview when the server sends a new preview
+        zipObserver = zipObservable.subscribe(
+            on_next=lambda _: self.getNextPreview(),
         )
-        self.getNextPreview()
+        self.compositeDisposable.add(zipObserver)
 
-    def onPreviewReceived(self, direction: tuple, preview: AgentState):
-        self.directionToHeuristicMap[direction] = self.agent.evaluateHeuristics(preview)
+        # Pipe the combined observable through an operator to find the direction with the lowest heuristic
+        minOperator = min_by(lambda x: self.agent.evaluateHeuristics(AgentState(x[1])), lambda x, y: x - y)
+        minObservable = zipObservable.pipe(minOperator)
+
+        # When the combined observable completes, choose the best direction for the agent
+        # If there is more than one, a direction will be chosen at random
+        minObserver = minObservable.subscribe(
+            on_next=lambda bestDirection: self.selectBestDirection(random.choice(bestDirection)[0])
+        )
+        self.compositeDisposable.add(minObserver)
+
         self.getNextPreview()
 
     def getNextPreview(self):
         try:
             direction = next(self.directions)
-            # print("Getting preview for direction: ", direction)
             position = self.getPosition(self.currentState.position, direction)
             self.client.sendSelect(position)
         except StopIteration:
-            self.findBestPreview()
+            # No more directions to send
+            pass
 
-    def findBestPreview(self):
-        self.zipObserver.dispose()
+    def selectBestDirection(self, bestDirection: tuple):
+        # Dispose of the observer subscriptions
+        self.compositeDisposable.dispose()
 
-        bestDirection = min(self.directionToHeuristicMap, key=self.directionToHeuristicMap.get)
-        bestHeuristic = self.directionToHeuristicMap[bestDirection]
         self.client.sendSelect(self.getPosition(self.currentState.position, bestDirection))
-        print("Selected position: ", self.getPosition(self.currentState.position, bestDirection), "with heuristic: ",
-              bestHeuristic)
+        # print("Selected tile: ", self.getPosition(self.currentState.position, bestDirection))
+
         self.client.sendCommit()
 
     @staticmethod

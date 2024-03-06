@@ -11,13 +11,13 @@ from Game.Game import Game
 class GameServer(Server):
     channelClass = AgentChannel
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, game: Game, *args, **kwargs):
         Server.__init__(self, *args, **kwargs)
 
         self.channelObservables = {}
         self.agentChannels = {}
 
-        self.game = Game()
+        self.game = game
         print("Server launched")
 
     def Connected(self, channel: IAgentChannel, address):
@@ -34,12 +34,13 @@ class GameServer(Server):
         self.agentChannels[address] = agent
 
     def removeChannel(self, address: tuple):
-        agent = self.agentChannels[address]
-        self.game.removeAgent(agent)
-        del self.agentChannels[address]
+        if address in self.agentChannels:
+            self.game.removeAgent(self.agentChannels[address])
+            del self.agentChannels[address]
 
-        self.channelObservables[address].dispose()
-        del self.channelObservables[address]
+        if address in self.channelObservables:
+            self.channelObservables[address].dispose()
+            del self.channelObservables[address]
 
     def Launch(self):
         while True:

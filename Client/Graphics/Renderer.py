@@ -82,6 +82,13 @@ class Renderer:
                 pg.draw.circle(self.screen, pg.Color("green"),
                                self.getAgentPosition(agent.position), TILE_SIZE // 4)
 
+            # If the agent has any items, draw a small number inside the agent
+            if len(agent.items) > 0:
+                font = pg.font.Font(None, 24)
+                text = font.render(str(len(agent.items)), True, pg.Color("black"))
+                textRect = text.get_rect(center=self.getAgentPosition(agent.position))
+                self.screen.blit(text, textRect)
+
         # Update the display
         pg.display.flip()
 
