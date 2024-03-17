@@ -2,6 +2,8 @@ from Heuristic.CheckoutHeuristic import CheckoutHeuristic
 from Heuristic.ExitStoreHeuristic import ExitStoreHeuristic
 from Heuristic.GetItemHeuristic import GetItemHeuristic
 from Heuristic.GetRandomItemHeuristic import GetRandomItemHeuristic
+from Heuristic.GetSpontaneousItemHeuristic import GetSpontaneousItemHeuristic
+from Heuristic.GetSpontaneousRandomItemHeuristic import GetSpontaneousRandomItemHeuristic
 from Heuristic.Heuristic import Heuristic
 from Heuristic.HeuristicWithParameters import HeuristicWithParameters
 from Heuristic.WanderingHeuristic import WanderingHeuristic
@@ -12,6 +14,9 @@ HEURISTICS = [
     ExitStoreHeuristic,
     CheckoutHeuristic,
     GetRandomItemHeuristic,
+    WanderingHeuristic,
+    GetSpontaneousItemHeuristic,
+    GetSpontaneousRandomItemHeuristic,
     WanderingHeuristic
 ]
 

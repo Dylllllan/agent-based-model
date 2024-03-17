@@ -1,0 +1,27 @@
+{
+  "agentType": "SHOPPER",
+  "heuristics": [
+    {
+      "name": "GetRandomItemHeuristic"
+    },
+    [
+      {
+        "name": "WanderingHeuristic"
+      },
+      {
+        "name": "GetSpontaneousItemHeuristic",
+        "parameters": {
+          "weight": 50,
+          "probability": 0.1,
+          "category": "Snacks To Go"
+        }
+      }
+    ],
+    {
+      "name": "CheckoutHeuristic"
+    },
+    {
+      "name": "ExitStoreHeuristic"
+    }
+  ]
+}

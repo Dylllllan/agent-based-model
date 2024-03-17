@@ -6,6 +6,7 @@ from Agent.AgentType import AgentType
 from Agent.IAgent import IAgent
 from Agent.IAgentClient import IAgentClient
 from Heuristic.HeuristicFactory import HeuristicFactory
+from Heuristic.SpontaneityHeuristic import SpontaneityHeuristic
 from Store.Store import Store
 
 
@@ -46,12 +47,21 @@ class Agent(IAgent):
         self.currentTimeStep = AgentTimeStep(self.agentId, self.store, self.client, self)
 
     def evaluateHeuristics(self, state: AgentState) -> float:
-        return sum([heuristic.evaluate(state) for heuristic in self.currentHeuristicSet])
+        spontaneousHeuristics = [heuristic for heuristic in self.currentHeuristicSet if
+                                 isinstance(heuristic, SpontaneityHeuristic)]
+        spontaneityScore = sum([heuristic.evaluate(state) for heuristic in spontaneousHeuristics])
+
+        # If the spontaneity heuristics have a positive score, return the sum of only those heuristics
+        if spontaneityScore > 0:
+            return spontaneityScore
+        else:
+            # Otherwise, return the sum of all heuristics
+            return sum([heuristic.evaluate(state) for heuristic in self.currentHeuristicSet])
 
     def nextHeuristicSet(self):
         try:
-            # print("Next heuristic set")
+            print("Next heuristic set")
             self.currentHeuristicSet = next(self.heuristicSetIterator)
         except StopIteration:
-            # print("No more heuristic sets")
+            print("No more heuristic sets")
             self.client.Close()
