@@ -16,8 +16,7 @@ HEURISTICS = [
     GetRandomItemHeuristic,
     WanderingHeuristic,
     GetSpontaneousItemHeuristic,
-    GetSpontaneousRandomItemHeuristic,
-    WanderingHeuristic
+    GetSpontaneousRandomItemHeuristic
 ]
 
 

@@ -21,7 +21,6 @@ class GameServer(Server):
         print("Server launched")
 
     def Connected(self, channel: IAgentChannel, address):
-        print("Channel connected")
         channel.LoginObservable.subscribe(
             on_next=lambda agentType: self.addChannel(address, channel, agentType),
             on_completed=lambda: self.removeChannel(address),
@@ -29,7 +28,6 @@ class GameServer(Server):
         self.channelObservables[address] = channel.LoginObservable
 
     def addChannel(self, address: tuple, channel: IAgentChannel, agentType: AgentType):
-        print("Channel added")
         agent = self.game.addAgent(channel, agentType)
         self.agentChannels[address] = agent
 

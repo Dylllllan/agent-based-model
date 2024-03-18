@@ -1,30 +1,22 @@
-import json
-
 from Agent.AgentState import AgentState
 from Agent.AgentTimeStep import AgentTimeStep
 from Agent.AgentType import AgentType
 from Agent.IAgent import IAgent
 from Agent.IAgentClient import IAgentClient
-from Heuristic.HeuristicFactory import HeuristicFactory
 from Heuristic.SpontaneityHeuristic import SpontaneityHeuristic
 from Store.Store import Store
 
 
 class Agent(IAgent):
-    def __init__(self, configFilePath: str, store: Store, agentClient: IAgentClient):
-        # Read the JSON configuration
-        file = open(configFilePath, "r")
-        config = json.load(file)
-        file.close()
-
+    def __init__(self, agentType: AgentType, heuristicSet: list, store: Store, agentClient: IAgentClient):
         self.client = agentClient
 
         self.store = store
-        self.heuristicSetIterator = iter(HeuristicFactory.createHeuristics(config["heuristics"], store))
+        self.heuristicSetIterator = iter(heuristicSet)
         self.currentHeuristicSet = next(self.heuristicSetIterator)
 
         # When the client is connected, send the agent type to the server
-        self.client.ConnectionObservable.subscribe(lambda _: self.client.sendInit(AgentType[config["agentType"]]))
+        self.client.ConnectionObservable.subscribe(lambda _: self.client.sendInit(agentType))
 
         self.agentId = None
         self.client.AgentIdObservable.subscribe(lambda agentId: self.setAgentId(agentId))
@@ -63,5 +55,5 @@ class Agent(IAgent):
             print("Next heuristic set")
             self.currentHeuristicSet = next(self.heuristicSetIterator)
         except StopIteration:
-            print("No more heuristic sets")
+            # print("No more heuristic sets")
             self.client.Close()

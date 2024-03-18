@@ -44,7 +44,7 @@ class ItemObserver(Observer):
             file.write(text + "\n")
 
     def on_next(self, value):
-        print(f"Item {self.item.id} at position {value}")
+        # print(f"Item {self.item.id} at position {value}")
         # Write the time and position to the file
         self.writeLine(f"{self.currentTime}, {value[0]}, {value[1]}")
         # Increment the time

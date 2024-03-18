@@ -9,7 +9,7 @@ from Store.ItemObserver import ItemObserver
 from Store.Store import Store
 from Store.TileType import TileType
 
-MIN_PLAYERS = 1
+MIN_PLAYERS = 50
 
 
 class Game:
@@ -30,7 +30,6 @@ class Game:
 
         # Create the agent
         agent = Agent(agentChannel, agentType, door.position)
-        self.addedAgentQueue.append(agent)
 
         itemObserver = agent.ItemObservable.subscribe(
             lambda item: item.addPositionObserver(
@@ -41,6 +40,9 @@ class Game:
 
         # Send an initial message to the agent
         agent.channel.SendInit(agent.id, self.store)
+
+        # Add the agent to the player queue
+        self.addedAgentQueue.append(agent)
 
         if len(self.getPendingPlayingAgents()) == MIN_PLAYERS and not self.running:
             # Start the game
@@ -91,6 +93,9 @@ class Game:
 
             self.running = False
             self.sendStateToAgents()
+
+            # Reset time step to zero
+            self.timeStep = 0
 
             return
 
