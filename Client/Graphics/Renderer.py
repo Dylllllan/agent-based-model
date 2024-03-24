@@ -3,13 +3,15 @@ from sys import exit
 import pygame as pg
 from reactivex import Observable
 
+from Graphics.Controller import Controller
 from Store.Store import Store
 
 TILE_SIZE = 40
 
 
 class Renderer:
-    def __init__(self, tickObservable: Observable, store: Store, connectionObservable: Observable):
+    def __init__(self, tickObservable: Observable, store: Store, connectionObservable: Observable,
+                 controller: Controller = None):
         pg.init()
         self.screen = None
         self.readyToStart = False
@@ -19,6 +21,8 @@ class Renderer:
 
         self.store = store
         self.store.MapObservable.subscribe(on_next=lambda _: self.initialiseStore())
+
+        self.controller = controller
 
         tickObservable.subscribe(on_next=lambda _: self.render())
         connectionObservable.subscribe(on_completed=lambda: self.stopRendering())
@@ -68,6 +72,16 @@ class Renderer:
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 self.stopRendering()
+            # Otherwise, arrow keys can be used to move the agent
+            elif event.type == pg.KEYDOWN and self.controller is not None:
+                if event.key == pg.K_UP:
+                    self.controller.moveInDirection((0, 1))
+                elif event.key == pg.K_DOWN:
+                    self.controller.moveInDirection((0, -1))
+                elif event.key == pg.K_LEFT:
+                    self.controller.moveInDirection((-1, 0))
+                elif event.key == pg.K_RIGHT:
+                    self.controller.moveInDirection((1, 0))
 
         # Draw the store map
         self.screen.blit(self.mapSurface, (0, 0))

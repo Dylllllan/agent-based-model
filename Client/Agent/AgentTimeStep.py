@@ -8,6 +8,7 @@ from Agent.AgentState import AgentState
 from Agent.IAgent import IAgent
 from Agent.IAgentClient import IAgentClient
 from Store.Store import Store
+from Utils import getPositionInDirection
 
 
 class AgentTimeStep:
@@ -48,7 +49,7 @@ class AgentTimeStep:
     def getNextPreview(self):
         try:
             direction = next(self.directions)
-            position = self.getPosition(self.currentState.position, direction)
+            position = getPositionInDirection(self.currentState.position, direction)
             self.client.sendSelect(position)
         except StopIteration:
             # No more directions to send
@@ -58,11 +59,7 @@ class AgentTimeStep:
         # Dispose of the observer subscriptions
         self.compositeDisposable.dispose()
 
-        self.client.sendSelect(self.getPosition(self.currentState.position, bestDirection))
+        self.client.sendSelect(getPositionInDirection(self.currentState.position, bestDirection))
         # print("Selected tile: ", self.getPosition(self.currentState.position, bestDirection))
 
         self.client.sendCommit()
-
-    @staticmethod
-    def getPosition(position: tuple, direction: tuple) -> tuple:
-        return position[0] + direction[0], position[1] + direction[1]
