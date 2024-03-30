@@ -18,6 +18,12 @@ class AgentState(IAgent, ISerializable):
     def addItem(self, itemState: ItemState):
         self.items.append(itemState)
 
+    def hasItem(self, itemState: ItemState) -> bool:
+        for item in self.items:
+            if item.name == itemState.name:
+                return True
+        return False
+
     def setPaid(self, paid: bool):
         self.paid = paid
 
@@ -26,6 +32,6 @@ class AgentState(IAgent, ISerializable):
             "id": self.id,
             "agentType": self.agentType,
             "position": self.position,
-            "items": list(i.toDict() for i in self.items),
+            "items": [i.toDict() for i in self.items],
             "paid": self.paid
         }

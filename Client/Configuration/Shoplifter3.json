@@ -1,0 +1,33 @@
+{
+  "agentType": "SHOPLIFTER",
+  "heuristics": [
+    {
+      "name": "DistanceFromItemHeuristic",
+      "parameters": {
+        "category": "Red Wine",
+        "distance": -3
+      }
+    },
+    {
+      "name": "DistanceFromSelfHeuristic",
+      "parameters": {
+        "distance": 5
+      }
+    },
+    {
+      "name": "GetItemHeuristic",
+      "parameters": {
+        "category": "Red Wine"
+      }
+    },
+    {
+      "name": "DistanceFromSelfHeuristic",
+      "parameters": {
+        "distance": 5
+      }
+    },
+    {
+      "name": "ExitStoreHeuristic"
+    }
+  ]
+}

@@ -15,3 +15,7 @@ class IAgent(ABC):
     @abstractmethod
     def setPaid(self, paid: bool):
         raise NotImplementedError
+
+    @abstractmethod
+    def hasItem(self, itemState: ItemState) -> bool:
+        raise NotImplementedError

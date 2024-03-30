@@ -40,12 +40,11 @@ class Agent(IAgent):
 
     def evaluateHeuristics(self, state: AgentState) -> float:
         spontaneousHeuristics = [heuristic for heuristic in self.currentHeuristicSet if
-                                 isinstance(heuristic, SpontaneityHeuristic)]
-        spontaneityScore = sum([heuristic.evaluate(state) for heuristic in spontaneousHeuristics])
+                                 isinstance(heuristic, SpontaneityHeuristic) and heuristic.activated]
 
-        # If the spontaneity heuristics have a positive score, return the sum of only those heuristics
-        if spontaneityScore > 0:
-            return spontaneityScore
+        # If there is an activated spontaneity heuristic, return the sum of only those heuristics
+        if len(spontaneousHeuristics) > 0:
+            return sum([heuristic.evaluate(state) for heuristic in spontaneousHeuristics])
         else:
             # Otherwise, return the sum of all heuristics
             return sum([heuristic.evaluate(state) for heuristic in self.currentHeuristicSet])

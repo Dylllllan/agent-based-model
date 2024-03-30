@@ -80,9 +80,12 @@ class Game:
 
         # Remove agents
         for agent in self.removedAgentQueue:
-            agentOnDoor = self.store.getTile(agent.position).type == TileType.DOOR
-            agent.leaveStore(agentOnDoor)
+            # Check if the agent is in a valid state, i.e. on a door, and if they're a shopper they paid
+            validState = self.store.getTile(agent.position).type == TileType.DOOR
+            if agent.type == AgentType.SHOPPER:
+                validState = validState and agent.paid
 
+            agent.leaveStore(validState)
             self.agents.remove(agent)
 
         self.removedAgentQueue.clear()

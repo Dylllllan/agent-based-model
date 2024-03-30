@@ -31,8 +31,8 @@ class Item(DisposableBase):
     def toItemState(self) -> ItemState:
         return ItemState(self.name, self.category, self.price)
 
-    def remove(self, onDoor: bool):
-        if onDoor:
+    def remove(self, validState: bool):
+        if validState:
             self.positionSubject.on_completed()
         else:
             self.positionSubject.on_error(Exception("Item removed at an invalid location"))

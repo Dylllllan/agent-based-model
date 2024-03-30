@@ -42,6 +42,12 @@ class Agent(IAgent, DisposableBase):
         self.items.append(item)
         self.itemSubject.on_next(item)
 
+    def hasItem(self, itemState: ItemState) -> bool:
+        for item in self.items:
+            if item.name == itemState.name:
+                return True
+        return False
+
     def setPaid(self, paid: bool):
         self.paid = paid
         # Set the position for the current timestep
@@ -54,9 +60,9 @@ class Agent(IAgent, DisposableBase):
     def ItemObservable(self) -> Observable:
         return self.itemSubject
 
-    def leaveStore(self, onDoor: bool):
+    def leaveStore(self, validState: bool):
         for item in self.items:
-            item.remove(onDoor)
+            item.remove(validState)
 
     def dispose(self):
         self.compositeDisposable.dispose()

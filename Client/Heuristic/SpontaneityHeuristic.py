@@ -11,8 +11,6 @@ class SpontaneityHeuristic(HeuristicWithParameters, ABC):
     def __init__(self, store: Store, params: dict):
         super().__init__(store)
 
-        # This is to out-weigh other heuristics occurring at the same time
-        self.weight = int(params["weight"])
         # This is evaluated at each time step, and so should be quite low to be effective
         self.probability = float(params["probability"])
 
@@ -42,9 +40,9 @@ class SpontaneityHeuristic(HeuristicWithParameters, ABC):
         # Set the heuristic to active if it has been evaluated at least once
         self.active = True
 
-        # If the spontaneity heuristic is not active, return 0
+        # If the spontaneity heuristic is not activated, return 0
         if not self.activated:
             return 0.0
         else:
-            # Otherwise, evaluate the heuristic and multiply by the weight
-            return self.weight * self.heuristic.evaluate(state)
+            # Otherwise, evaluate the heuristic
+            return self.heuristic.evaluate(state)

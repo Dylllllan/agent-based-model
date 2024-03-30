@@ -1,8 +1,15 @@
 from Heuristic.CheckoutHeuristic import CheckoutHeuristic
+from Heuristic.DistanceFromItemAbovePriceHeuristic import DistanceFromItemAbovePriceHeuristic
+from Heuristic.DistanceFromItemHeuristic import DistanceFromItemHeuristic
+from Heuristic.DistanceFromSelfHeuristic import DistanceFromSelfHeuristic
 from Heuristic.ExitStoreHeuristic import ExitStoreHeuristic
+from Heuristic.GetItemAbovePriceHeuristic import GetItemAbovePriceHeuristic
 from Heuristic.GetItemHeuristic import GetItemHeuristic
+from Heuristic.GetNearbyItemAbovePriceHeuristic import GetNearbyItemAbovePriceHeuristic
+from Heuristic.GetNearbyItemHeuristic import GetNearbyItemHeuristic
 from Heuristic.GetRandomItemHeuristic import GetRandomItemHeuristic
 from Heuristic.GetSpontaneousItemHeuristic import GetSpontaneousItemHeuristic
+from Heuristic.GetSpontaneousNearbyItemHeuristic import GetSpontaneousNearbyItemHeuristic
 from Heuristic.GetSpontaneousRandomItemHeuristic import GetSpontaneousRandomItemHeuristic
 from Heuristic.Heuristic import Heuristic
 from Heuristic.HeuristicWithParameters import HeuristicWithParameters
@@ -16,7 +23,14 @@ HEURISTICS = [
     GetRandomItemHeuristic,
     WanderingHeuristic,
     GetSpontaneousItemHeuristic,
-    GetSpontaneousRandomItemHeuristic
+    GetSpontaneousRandomItemHeuristic,
+    GetItemAbovePriceHeuristic,
+    DistanceFromItemHeuristic,
+    DistanceFromItemAbovePriceHeuristic,
+    DistanceFromSelfHeuristic,
+    GetNearbyItemHeuristic,
+    GetSpontaneousNearbyItemHeuristic,
+    GetNearbyItemAbovePriceHeuristic,
 ]
 
 

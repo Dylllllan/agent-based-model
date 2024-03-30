@@ -5,6 +5,7 @@ from Agent.AgentState import AgentState
 from Agent.AgentType import AgentType
 from Store.Tile import Tile, Shelf
 from Store.TileType import TileType
+from Utils import getPositionInDirection
 
 
 class Store:
@@ -74,6 +75,14 @@ class Store:
 
     def isPositionInBounds(self, position: tuple) -> bool:
         return 0 <= position[0] < self.width and 0 <= position[1] < self.height
+
+    def isPositionCorner(self, position: tuple) -> bool:
+        # Get the directions from the position
+        directions = self.getDirectionsFromPosition(position)
+        # Filter the directions to only include tiles that are TILE or WAYPOINT
+        # If there are only 2 or fewer directions, the position is a corner
+        return len([direction for direction in directions if self.getTile(
+            getPositionInDirection(position, direction)).type in [TileType.TILE, TileType.WAYPOINT]]) <= 2
 
     def getDirectionsFromPosition(self, position: tuple) -> list:
         directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]

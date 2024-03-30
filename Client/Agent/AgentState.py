@@ -10,5 +10,8 @@ class AgentState:
         self.items = [ItemState(item) for item in data["items"]]
         self.paid = data["paid"]
 
+    def hasItemName(self, itemName: str) -> bool:
+        return any(item.name == itemName for item in self.items)
+
     def hasItemCategory(self, itemCategory: str) -> bool:
         return any(item.category == itemCategory for item in self.items)
