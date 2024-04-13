@@ -4,6 +4,7 @@ from abc import ABC
 from Agent.AgentState import AgentState
 from Heuristic.HeuristicWithParameters import HeuristicWithParameters
 from Heuristic.NavigationHeuristic import NavigationHeuristic
+from Store.TileType import TileType
 from Utils import distanceBetweenPoints
 
 
@@ -26,6 +27,10 @@ class DistanceHeuristic(HeuristicWithParameters, ABC):
             self.navigationHeuristic.setDestination(self.target)
 
     def evaluate(self, state: AgentState) -> float:
+        if self.store.getTile(state.position).type == TileType.DOOR:
+            # If the agent is trying to move to a door, the heuristic should return a high score to deter
+            return 1000
+
         currentAgentState = self.store.getAgent(state.id)
 
         # If the agent is stuck in a corner, immediately satisfy the heuristic
