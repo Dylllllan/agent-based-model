@@ -8,6 +8,9 @@ from Store.Store import Store
 
 TILE_SIZE = 40
 
+NUMBER_OF_ITEMS_FONT_SIZE = 24
+PREDICTION_FONT_SIZE = 16
+
 
 class Renderer:
     def __init__(self, tickObservable: Observable, store: Store, connectionObservable: Observable,
@@ -98,10 +101,20 @@ class Renderer:
 
             # If the agent has any items, draw a small number inside the agent
             if len(agent.items) > 0:
-                font = pg.font.Font(None, 24)
+                font = pg.font.Font(None, NUMBER_OF_ITEMS_FONT_SIZE)
                 text = font.render(str(len(agent.items)), True, pg.Color("black"))
                 textRect = text.get_rect(center=self.getAgentPosition(agent.position))
                 self.screen.blit(text, textRect)
+
+                # For each item, draw the prediction above the agent
+                drawPositionY = self.getAgentPosition(agent.position)[1] - TILE_SIZE // 2 - PREDICTION_FONT_SIZE // 2
+                for item in agent.items:
+                    predictionFont = pg.font.Font(None, PREDICTION_FONT_SIZE)
+                    predictionText = predictionFont.render(str(round(item.prediction, 2)), True, pg.Color("black"))
+                    predictionRect = predictionText.get_rect(center=(self.getAgentPosition(agent.position)[0],
+                                                                     drawPositionY))
+                    self.screen.blit(predictionText, predictionRect)
+                    drawPositionY -= PREDICTION_FONT_SIZE
 
         # Update the display
         pg.display.flip()

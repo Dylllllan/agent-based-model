@@ -1,3 +1,4 @@
+import asyncio
 import random
 
 from Agent.Agent import Agent
@@ -5,11 +6,12 @@ from Agent.AgentType import AgentType
 from Agent.IAgentChannel import IAgentChannel
 from Game.GameTimeStep import GameTimeStep
 from Network.StateMessage import StateMessage
+from Prediction.Predictor import Predictor
 from Store.ItemObserver import ItemObserver
 from Store.Store import Store
 from Store.TileType import TileType
 
-MIN_PLAYERS = 50
+MIN_PLAYERS = 1
 
 
 class Game:
@@ -103,6 +105,8 @@ class Game:
             return
 
         # print("Continuing game with " + str(len(self.agents)) + " agents.")
+        predictor = Predictor(self.getPlayingAgents(), self.timeStep)
+        asyncio.run(predictor.predict())
 
         # Increment the time step
         self.timeStep += 1

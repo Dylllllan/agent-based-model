@@ -16,6 +16,7 @@ class Item(DisposableBase):
         self.name = itemState.name
         self.category = itemState.category
         self.price = itemState.price
+        self.prediction = itemState.prediction
 
         self.position = position
         self.positionSubject = BehaviorSubject(self.position)
@@ -28,8 +29,11 @@ class Item(DisposableBase):
         self.position = position
         self.positionSubject.on_next(position)
 
+    def setPrediction(self, prediction: float):
+        self.prediction = prediction
+
     def toItemState(self) -> ItemState:
-        return ItemState(self.name, self.category, self.price)
+        return ItemState(self.name, self.category, self.price, self.prediction)
 
     def remove(self, validState: bool):
         if validState:

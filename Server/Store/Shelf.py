@@ -16,7 +16,7 @@ class Shelf(Tile):
         self.action = PickupAction(self.getItemState())
 
     def getItemState(self) -> ItemState:
-        return ItemState(self.name, self.category, self.price)
+        return ItemState(self.name, self.category, self.price, 0.5)
 
     def toDict(self) -> dict:
         tile = super().toDict()
