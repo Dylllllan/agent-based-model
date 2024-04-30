@@ -14,5 +14,6 @@ class PredictionItemState(ISerializable):
             "y": self.item.position[1],
             "category": self.item.category,
             "status": "moving",
-            "id": self.item.id
+            "id": self.item.id,
+            "name": self.item.name
         }
